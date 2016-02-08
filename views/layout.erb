@@ -1,0 +1,212 @@
+ <!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>ShopFine: eCommerce Website</title>
+	<meta name="description" content="">
+	<meta name="author" content="Ahmed Saeed">
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
+	<!-- jquery ui css -->
+	<link rel="stylesheet" href="css/jquery-ui-1.10.1.min.css">
+	<link rel="stylesheet" href="css/customize.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- flexslider css-->
+	<link rel="stylesheet" href="css/flexslider.css">
+	<!-- fancybox -->
+	<link rel="stylesheet" href="js/fancybox/jquery.fancybox.css">
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+		<link rel="stylesheet" href="css/font-awesome-ie7.css">
+	<![endif]-->
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+</head>
+
+<body>
+
+	<div id="mainContainer" class="clearfix">
+
+		<!--begain header-->
+		<header>
+			<div class="middleHeader">
+				<div class="container">
+
+					<div class="middleContainer clearfix">
+
+					<div class="siteLogo pull-left">
+						<h1><a href="/">ShopFine</a></h1>
+					</div>
+
+					<div class="pull-right">
+						<!-- <form method="get" action="/" class="siteSearch"> -->
+							<div class="input-append">
+								<input type="text" class="span2" id="appendedInputButton" placeholder="Search...">
+								<button class="btn btn-primary" type="submit" name=""><i class="icon-search"></i></button>
+							</div>
+						<!-- </form> -->
+					</div>
+
+					<div class="pull-right">
+						<div class="btn-group">
+							<a class="btn" href="/cart">
+							    <i class="icon-shopping-cart"></i> <%= @order_products_count %> Items
+							</a>
+						</div>
+					</div><!--end pull-right-->
+
+					</div><!--end middleCoontainer-->
+
+				</div><!--end container-->
+			</div><!--end middleHeader-->		
+		</header>
+		<!-- end header -->
+
+		<div class="container">
+			<%= yield %>
+		</div><!--end conatiner-->
+
+
+		<!--begain footer-->
+		<footer>
+		<div class="footerOuter">
+			<div class="container">
+				<div class="row-fluid">
+
+					<div class="span6">
+						<div class="titleHeader clearfix">
+							<h3>Usefull Links</h3>
+						</div>
+
+						
+						<div class="usefullLinks">
+							<div class="row-fluid">
+								<div class="span6">
+									<ul class="unstyled">
+										<li><a class="invarseColor" href="#"><i class="icon-caret-right"></i> About Us</a></li>
+										<li><a class="invarseColor" href="#"><i class="icon-caret-right"></i> Delivery Information</a></li>
+										<li><a class="invarseColor" href="#"><i class="icon-caret-right"></i> Privecy Police</a></li>
+										<li><a class="invarseColor" href="#"><i class="icon-caret-right"></i> Tarms &amp; Condations</a></li>
+									</ul>
+								</div>
+
+								<div class="span6">
+									<ul class="unstyled">
+										<li><a class="invarseColor" href="#"><i class="icon-caret-right"></i> Surf Brands</a></li>
+										<li><a class="invarseColor" href="#"><i class="icon-caret-right"></i> Customer Support</a></li>
+										<li><a class="invarseColor" href="#"><i class="icon-caret-right"></i> Special Gifs</a></li>
+										<li><a class="invarseColor" href="#"><i class="icon-caret-right"></i> Browse Site Map</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+					</div><!--end span6-->
+
+					<div class="span3">
+						<div class="titleHeader clearfix">
+							<h3>Contact Info</h3>
+						</div>
+
+						<div class="contactInfo">
+							<ul class="unstyled">
+								<li>
+									<button class="btn btn-small">
+										<i class="icon-volume-up"></i>
+									</button>
+									Call Us: <a class="invarseColor" href="#">5246-4697-891</a>
+								</li>
+								<li>
+									<button class="btn btn-small">
+										<i class="icon-envelope-alt"></i>
+									</button>
+									<a class="invarseColor" href="#">shop@shop.com</a>
+								</li>
+								<li>
+									<button class="btn btn-small">
+										<i class="icon-map-marker"></i>
+									</button>
+									22 Avenue Park, Los Angeles
+								</li>
+							</ul>
+						</div>
+
+					</div><!--end span3-->
+
+					<div class="span3">
+						<div class="titleHeader clearfix">
+							<h3>Newslatter</h3>
+						</div>
+
+						<div class="newslatter">
+							<form method="get" action="/">
+								<input class="input-block-level" type="text" name="email" value="" placeholder="Your Name...">
+								<input class="input-block-level" type="text" name="email" value="" placeholder="Your E-Mail...">
+								<button disabled="disabled" class="btn btn-block" type="submit" name="">Join Us Now</button>
+							</form>
+						</div>
+
+					</div><!--end span3-->
+
+				</div><!--end row-fluid-->
+
+			</div><!--end container-->
+		</div><!--end footerOuter-->
+
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<ul class="payments inline pull-right">
+						<li class="visia"></li>
+						<li class="paypal"></li>
+						<li class="electron"></li>
+						<li class="discover"></li>
+					</ul>
+					<p>© Copyrights 2016 - Test Automation Survival Camp</p>
+				</div>
+			</div>
+		</div>
+		</footer>
+		<!--end footer-->
+
+	</div><!--end mainContainer-->
+
+	<!-- JS
+	================================================== -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<!-- jQuery.Cookie -->
+	<script src="js/jquery.validate.min.js"></script>
+	<!-- jQuery.Cookie -->
+	<script src="js/jquery.cookie.js"></script>
+	<!-- bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- tweets -->
+    <script src="js/jquery.tweet.js"></script>
+    <!-- fancybox -->
+    <script src="js/fancybox/jquery.fancybox.js"></script>
+    <!-- custom function-->
+    <script src="js/custom.js"></script>
+    
+    <%= yield_content :script %>
+
+</body>
+
+</html>

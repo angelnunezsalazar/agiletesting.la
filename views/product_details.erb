@@ -1,0 +1,88 @@
+<div class="row">
+	
+	<div class="span9">
+		<div class="row">
+
+			<div class="product-details clearfix">
+				<div class="span9">
+					<div class="product-title">
+						<h3><%= @product.name %></h3>
+					</div>
+					<div class="row">
+						<div class="span5">
+							<div class="product-img">
+								<a class="fancybox" href="img/650x700.jpg"><img src="img/372x370.jpg" alt=""></a>
+							</div><!--end product-img-->
+						</div><!--end span9-->
+						<div class="span4">
+							<div class="product-set">
+								<div class="product-price">
+									<span>$<%= @product.price %></span>
+								</div>
+								<div class="product-rate clearfix">
+									<%= erb(:stars,:locals => { :stars => @product.review_stars }) %>
+									<span><%= @product.product_reviews.size %> Review(s) <a href="#">Make a Review</a></span>
+								</div><!--end product-inputs-->
+								<div class="product-info">
+									<dl class="dl-horizontal">
+									  <dt>Availabilty:</dt>
+									  <dd>Available In Stock</dd>
+
+									  <dt>Product Code:</dt>
+									  <dd>No. CtAw9458</dd>
+
+									  <dt>Manfactuer:</dt>
+									  <dd>Nicka Corparation</dd>
+
+									   <dt>Review Points:</dt>
+									  <dd>25 Points</dd>
+									</dl>
+								</div><!--end product-info-->
+								<div class="product-inputs">
+									<form method="post" action="/add_to_cart" style="display:inline">
+										<div class="input-append" style="display:inline">
+											<input type="hidden" id="quantity" name="quantity" value="1">
+											<input type="hidden" name="product_id" value="<%= @product.id %>"/>
+											<button class="btn btn-primary"><i class="icon-shopping-cart"></i> Add To Cart</button>
+										</div>
+									</form>
+									<button class="btn" data-toggle="tooltip" data-title="+To Wishlist" data-original-title="" title="">
+										<i class="icon-heart"></i>
+									</button><!--end form-->
+								</div>
+							</div><!--end product-set-->
+					</div><!--end span4-->
+					</div>
+				</div><!--end span9-->
+			</div><!--end product-details-->
+
+		</div><!--end row-->
+
+		<% if @product.product_reviews.size>0 %>
+		<div id="Reviews">
+			<div class="product-tab">
+				<div class="titleHeader clearfix">
+					<h3>Reviews</h3>
+				</div>
+				<br>
+				<div class="tab-pane" id="read-review">
+				<% @product.product_reviews.each do |pr| %>
+					<div class="single-review clearfix">
+						<div class="review-header">
+							<%= erb(:stars,:locals => { :stars => pr.rating }) %>
+							<h4><%= pr.reviewer %></h4>
+							<small><%= pr.review_date %></small>
+						</div><!--end review-header-->
+
+						<div class="review-body">
+							<p><%= pr.comment %></p>
+						</div><!--end review-body-->
+					</div><!--end single-review-->
+				<% end %>
+				</div>
+			</div>
+		</div>
+		<% end %>
+	</div><!--end span9-->
+
+</div><!--end row-->

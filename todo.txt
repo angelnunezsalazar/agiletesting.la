@@ -1,0 +1,9 @@
+FEATURES
+===============
+- Logica del shipping cost
+- Logica del descuento
+
+VISUALES
+==============
+Resumen de los montos en todas las pantallas de la compra
+Agregar Productos
