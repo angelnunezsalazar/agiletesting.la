@@ -66,6 +66,13 @@ h6 { font-size: 12px; line-height: 18px; }
 	background:#fff;
 	padding-right:8px;
 }
+
+.titleHeader h2 {
+	float:left;
+	background:#fff;
+	padding-right:8px;
+}
+
 .titleHeader .pagers {
 	float:right;
 	background:#fff;
@@ -595,24 +602,24 @@ footer {margin:50px 0 0 0;}
 		padding-right:8px;
 	}
 	/* rating */
-	.listProductItems .thumbSetting .thumbPriceRate .rating {
+	.listProductItems .thumbSetting .thumbRating .rating {
 		float:left;
 		list-style: none;
-		margin:0 12px 0;
+		margin:0 12px 0 0;
 		padding:0;
 	}
-	.listProductItems .thumbSetting .thumbPriceRate .rating li {
+	.listProductItems .thumbSetting .thumbRating .rating li {
 		margin:0;
 		padding:0;
 		float: left;
 	}
-	.listProductItems .thumbSetting .thumbPriceRate .rating i.star-on {
+	.listProductItems .thumbSetting .thumbRating .rating i.star-on {
 		width:17px;
 		height:17px;
 		display: block;
 		background:url('../img/star-on.png') no-repeat left top;
 	}
-	.listProductItems .thumbSetting .thumbPriceRate .rating i.star-off {
+	.listProductItems .thumbSetting .thumbRating .rating i.star-off {
 		width:17px;
 		height:17px;
 		display: block;
@@ -1419,6 +1426,11 @@ footer {margin:50px 0 0 0;}
 	    font-size: 14px;
 	    color: #f16325;
 	}
+
+/*================= twitter ===================*/
+#shippingDetails .delivery-date{
+    color: #090;
+}
 
 /*================= twitter ===================*/
 .tweet ul {

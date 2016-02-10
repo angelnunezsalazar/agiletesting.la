@@ -9,7 +9,7 @@
 					<% @order.order_items.each do |oi| %>
 						<li class="span4 clearfix">
 							<div class="thumbImage">
-								<a href=""><img src="img/92x92.jpg" alt=""></a>
+								<a href="/productdetails?productid=<%= oi.product.id %>"><img src="products/<%= oi.product.img %>" alt="<%= oi.product.name %>" style="width: 92px;"></a>
 							</div>
 							<div class="thumbSetting">
 								<div class="thumbTitle">
@@ -45,7 +45,7 @@
 						</ul>	
 						<h3>Estimated delivery</h3>
 						<ul class="unstyled">
-							<li class="estimatedDelivery"><%= @order.shipping_detail.delivery_option.delivey_date %></li>
+							<li class="estimatedDelivery"><%= @order.shipping_detail.delivery_option.delivery_date %></li>
 						</ul>			
 					</div>					
 				</div><!--end checkout-content-->

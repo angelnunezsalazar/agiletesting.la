@@ -1,10 +1,13 @@
 Product.delete_all
-product1=Product.create(name:'Carrot Cake',		description:'A scrumptious mini-carrot cake encrusted with sliced almonds',			price:8.99,img:'carrot_cake.jpg')
-product2=Product.create(name:'Cupcakes',		description:'Delectable vanilla and chocolate cupcakes',							price:5.99,img:'cupcakes.jpg')
-product3=Product.create(name:'Lemon Tart',		description:'A delicious lemon tart with fresh meringue cooked to perfection',		price:9.99,img:'lemon_tart.jpg')
-product4=Product.create(name:'Bread',			description:'Fresh baked French-style bread',										price:1.49,img:'bread.jpg')
-product5=Product.create(name:'Pear Tart',		description:'A glazed pear tart topped with sliced almonds and a dash of cinnamon',	price:5.99,img:'pear_tart.jpg')
-product6=Product.create(name:'Chocolate Cake',	description:"Rich chocolate frosting cover this chocolate lover's dream.",			price:8.99,img:'chocolate_cake.jpg')
+product1=Product.create(name:'Agile Testing: A Practical Guide for Testers and Agile Teams',description:'', author: 'Lisa Crispin, Janet Gregory', price:45.58,img:'agile_testing.jpg')
+product2=Product.create(name:'Automated Software Testing: Introduction, Management, and Performance: Introduction, Management, and Performance ',description:'',author:	'Elfriede Dustin, Jeff Rashka, John Paul',price:57.12,img:'automated_software_testing.jpg')
+product3=Product.create(name:'Fifty Quick Ideas To Improve Your Tests',description:'', author:	'Gojko Adzic, David Evans, Tom Roden', price:24.99,img:'fifty_quick_ideas.jpg')
+product4=Product.create(name:'How Google Tests Software', description:'', author:'James A. Whittaker, Jason Arbon, Jeff Carollo', price:27.16,img:'how_google_test_software.jpg')
+product5=Product.create(name:'More Agile Testing: Learning Journeys for the Whole Team',description:'',	author:	'Lisa Crispin, Janet Gregory', price:40.45,img:'more_agile_testing.jpg')
+product6=Product.create(name:'Software Test Automation', description:'', author:'Mark Fewster, Dorothy Graham',price:46.90,img:'software_test_automation.jpg')
+product7=Product.create(name:'Experiences of Test Automation: Case Studies of Software Test Automation', description:'', author:'Dorothy Graham, Mark Fewster',price:48.72,img:'experiences_test_automation.jpg')
+product8=Product.create(name:'Explore It!: Reduce Risk and Increase Confidence with Exploratory Testing', description:'Elisabeth Hendrickson', author:'Mark Fewster, Dorothy Graham',price:26.65,img:'explore_it.jpg')
+
 
 ProductReview.delete_all
 ProductReview.create(reviewer:'John Doe' 		,comment:'lo recomiendo!, muy entretenido',	rating:5,review_date:Time.now,product:product1);

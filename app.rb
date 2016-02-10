@@ -20,6 +20,13 @@ get '/' do
 	erb :"index"
 end
 
+get '/search' do
+	@order_products_count=current_order.products_count
+	@products=Product.where(["name LIKE ?", "%#{params[:query]}%"])
+	erb :"index"
+end
+
+
 post '/add_to_cart' do
 	order = current_order
 	order.add_product(params[:product_id].to_i,params[:quantity].to_i)
@@ -50,6 +57,7 @@ get '/productdetails' do
 end
 
 get '/shipping' do
+	@order_products_count=current_order.products_count
 	@delivery_options=DeliveryOption.all.order(:id)
 	erb :"shipping"
 end

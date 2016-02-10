@@ -1,56 +1,55 @@
 <div class="row">
-
 	<div class="span12">
-		<div id="featuredItems">
-			<!-- <div class="span12"> -->
-			<div class="titleHeader clearfix">
-				<h3>Featured Items</h3>
-			</div><!--end titleHeader-->
-			<!-- </div> -->
+		<div class="titleHeader clearfix">
+			<h2>Products</h2>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<ul class="listProductItems clearfix">
+	<% @products.each do |product| %>
+		<li class="clearfix">
+			<div class="span3">
+				<div class="thumbnail">
+					<a href="/productdetails?productid=<%= product.id %>"><img src="products/<%= product.img %>" alt="<%= product.name %>"></a>
+				</div>
+			</div>
+			<div class="span9">
+				<div class="thumbSetting">
+					<div class="thumbTitle">
+						<a href="/productdetails?productid=<%= product.id %>" class="invarseColor">
+							<%= product.name %>
+						</a>
+					</div>
+					<div class="thumbPriceRate clearfix">
+						<span>$<%= product.price %></span>
+					</div>
+					<div class="thumbRating clearfix">
+						<%= erb(:stars,:locals => { :stars => product.review_stars }) %>
+						<strong><%= product.product_reviews.size %> Reviews</strong>
+					</div>
+					<div class="thumbDesc">
+						<p>
+							Nam auctor nibh quis ipsum placerat sagittis ut at dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra [ <a href="#" data-title="Read More" data-toggle="tooltip" data-placement="top">...</a> ]
+						</p>
+					</div>
 
-			<div class="row">
-				<ul class="hProductItems clearfix">
-				<% @products.each do |product| %>
-					<li class="span3 clearfix">
-						<div class="thumbnail">
-							<a href="/productdetails?productid=<%= product.id %>"><img src="img/products/thumbnails/<%= product.img %>" alt=""></a>
-						</div>
-						<div class="thumbSetting">
-							<div class="thumbTitle">
-								<a href="/productdetails?productid=<%= product.id %>" class="invarseColor" class="invarseColor">
-									<%= product.name %>
-								</a>
-							</div>
-							<div class="thumbPrice">
-								<span>$<%= product.price %></span>
-							</div>
-
-							<div class="thumbButtons">
-								<form action="/add_to_cart" method="post" style="display:inline">
-									<input type="hidden" name="product_id" value="<%= product.id %>"/>
-									<input type="hidden" name="quantity" value="1"/>
-									<button class="btn btn-primary btn-small" data-title="+To Cart" data-placement="top" data-toggle="tooltip" type="submit">
-										<i class="icon-shopping-cart"></i>
-									</button>
-								</form>
-								<button class="btn btn-small" data-title="+To WishList" data-placement="top" data-toggle="tooltip">
-									<i class="icon-heart"></i>
-								</button>
-							</div>
-
-							<ul class="rating">
-								<li><i class="star-on"></i></li>
-								<li><i class="star-on"></i></li>
-								<li><i class="star-on"></i></li>
-								<li><i class="star-on"></i></li>
-								<li><i class="star-off"></i></li>
-							</ul>
-						</div>
-					</li>
-				<% end %>
-				</ul>
-			</div><!--end row-->
-		</div><!--end featuredItems-->
-	</div><!--end span12-->
-
-</div><!--end row-->
+					<div class="thumbButtons">
+						<form action="/add_to_cart" method="post" style="display:inline">
+							<input type="hidden" name="product_id" value="<%= product.id %>"/>
+							<input type="hidden" name="quantity" value="1"/>
+							<button class="btn btn-primary btn-small" type="submit">
+								<i class="icon-shopping-cart"></i>
+								Add To Cart
+							</button>
+						</form>
+						<button class="btn btn-small" data-title="+To WishList" data-placement="top" data-toggle="tooltip">
+							<i class="icon-heart"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+		</li>
+		<% end %>
+	</ul>
+</div>

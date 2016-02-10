@@ -6,12 +6,12 @@
 			<div class="product-details clearfix">
 				<div class="span9">
 					<div class="product-title">
-						<h3><%= @product.name %></h3>
+						<h2><%= @product.name %></h2>
 					</div>
 					<div class="row">
-						<div class="span5">
+						<div class="span5" style="width: auto;">
 							<div class="product-img">
-								<a class="fancybox" href="img/650x700.jpg"><img src="img/372x370.jpg" alt=""></a>
+								<a href="/productdetails?productid=<%= @product.id %>"><img src="products/<%= @product.img %>" alt="<%= @product.name %>" style="max-width: 250px;"></a>
 							</div><!--end product-img-->
 						</div><!--end span9-->
 						<div class="span4">
@@ -31,8 +31,8 @@
 									  <dt>Product Code:</dt>
 									  <dd>No. CtAw9458</dd>
 
-									  <dt>Manfactuer:</dt>
-									  <dd>Nicka Corparation</dd>
+									  <dt>Authors:</dt>
+									  <dd><%= @product.author %></dd>
 
 									   <dt>Review Points:</dt>
 									  <dd>25 Points</dd>
@@ -62,7 +62,7 @@
 		<div id="Reviews">
 			<div class="product-tab">
 				<div class="titleHeader clearfix">
-					<h3>Reviews</h3>
+					<h2>Reviews</h2>
 				</div>
 				<br>
 				<div class="tab-pane" id="read-review">

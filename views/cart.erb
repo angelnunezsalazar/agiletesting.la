@@ -16,7 +16,7 @@
 			<% @order.order_items.each do |oi| %>
 				<tr>
 					<td>
-						<a href="#"><img src="img/92x92.jpg" alt=""></a>
+						<a href="/productdetails?productid=<%= oi.product.id %>"><img width="92px" src="products/<%= oi.product.img %>" alt="<%= oi.product.name %>" style="width: 92px;"></a>
 					</td>
 					<td class="desc">
 						<h4><a href="/productdetails?productid=<%= oi.product.id %>" class="invarseColor">

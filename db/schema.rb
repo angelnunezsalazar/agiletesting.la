@@ -15,7 +15,8 @@ ActiveRecord::Schema.define(version: 20160127081623) do
 
   create_table "delivery_options", force: :cascade do |t|
     t.string  "name"
-    t.integer "estimated_days"
+    t.integer "min_days"
+    t.integer "max_days"
     t.boolean "default_active", default: false
     t.boolean "business_day"
   end
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(version: 20160127081623) do
   create_table "products", force: :cascade do |t|
     t.string  "name"
     t.string  "description"
+    t.string  "author"
     t.decimal "price",       precision: 8, scale: 2
     t.string  "img"
   end

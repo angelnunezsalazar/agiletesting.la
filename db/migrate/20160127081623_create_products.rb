@@ -3,6 +3,7 @@ class CreateProducts < ActiveRecord::Migration
 		create_table "products", :force => true do |t|
 		    t.string  "name"
 		    t.string  "description"
+		    t.string  "author"
 		    t.decimal "price",       precision: 8, scale: 2
 		    t.string  "img"
 	  	end

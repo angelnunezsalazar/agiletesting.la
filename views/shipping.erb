@@ -3,7 +3,7 @@
 		<div class="register">
 
 			<div class="titleHeader clearfix">
-				<h3>Shipping Details</h3>
+				<h2>Shipping Details</h2>
 			</div><!--end titleHeader-->
 
 			<form id="shippingDetails" method="post" action="/shipping" class="form-horizontal">
@@ -57,7 +57,7 @@
 				    	<label class="radio">
 						  <input type="radio" value="<%= option.id %>" name="delivery_option_id" 
 						  <%if option.default_active %>checked="checked"<%end%> >
-						  <%= option.name %>
+						  <%= option.name %> &#8212; <span class="delivery-date"><%= option.delivery_date %></span>
 					  </label>
 				    <% end %>
 				    </div>

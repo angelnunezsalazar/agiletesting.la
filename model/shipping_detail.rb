@@ -11,7 +11,7 @@ class DeliveryOption < ActiveRecord::Base
   	STANDARD_SHIPPING = "2"
   	EXPEDITED_SHIPPING = "3"	
 
-	def delivey_date
+	def delivery_date
 		if self.business_day
 			min_date=self.min_days.business_days.from_now
 			max_date=self.max_days.business_days.from_now
