@@ -1,4 +1,4 @@
-class CreateProducts < ActiveRecord::Migration
+class CreateTables < ActiveRecord::Migration
 	def change
 		create_table "products", :force => true do |t|
 		    t.string  "name"
