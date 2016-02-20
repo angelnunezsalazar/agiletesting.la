@@ -15,7 +15,8 @@ product7=Product.create(name:'Experiences of Test Automation: Case Studies of So
 product8=Product.create(name:'Explore It!: Reduce Risk and Increase Confidence with Exploratory Testing', description:'Uncover surprises, risks, and potentially serious bugs with exploratory testing. Rather than designing all tests in advance, explorers design and execute small, rapid experiments, using what they learned from the last little experiment to inform the next. Learn essential skills of a master explorer, including how to analyze software to discover key points of vulnerability, how to design experiments on the fly, how to hone your observation skills, and how to focus your efforts.', author:'Elisabeth Hendrickson',price:26.65,img:'explore_it.jpg')
 
 ProductReview.create(reviewer:'John Doe' 		,comment:'lo recomiendo!, muy entretenido',	rating:5,review_date:Time.now,product:product1);
-ProductReview.create(reviewer:'Luis Rodriguez' 	,comment:'estuvo meh!',						rating:1,review_date:Time.now,product:product1);
+ProductReview.create(reviewer:'Luis Rodriguez' 	,comment:'estuvo meh!',						rating:2,review_date:Time.now,product:product2);
+ProductReview.create(reviewer:'Carlos Perez' 	,comment:'uno de los mejores libros que he leido en toda mi vida', rating:4,review_date:Time.now,product:product3);
 
 DeliveryOption.create(name:'FREE Shipping (5-8 business days)',		min_days:5,max_days:8,business_day:true)
 DeliveryOption.create(name:'Standard Shipping (4-5 business days)',	min_days:3,max_days:5,business_day:true,default_active:true)

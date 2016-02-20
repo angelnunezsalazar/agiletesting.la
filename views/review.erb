@@ -1,0 +1,129 @@
+<div class="row">
+	
+	<div class="span9">
+		<div class="row">
+
+			<div class="product-details clearfix">
+				<div class="span9">
+					<div class="product-title">
+						<h2><%= @product.name %></h2>
+					</div>
+					<div class="row">
+						<div class="span5" style="width: auto;">
+							<div class="product-img">
+								<a href="/productdetails?productid=<%= @product.id %>"><img src="products/<%= @product.img %>" alt="<%= @product.name %>" style="max-width: 250px;"></a>
+							</div><!--end product-img-->
+						</div><!--end span9-->
+						<div class="span4">
+							<div class="product-set">
+								<div class="product-price">
+									<span>$<%= @product.price %></span>
+								</div>
+								<div class="product-rate clearfix">
+									<%= erb(:stars,:locals => { :stars => @product.review_stars }) %>
+									<span><%= @product.product_reviews.size %> Review(s)</span>
+								</div><!--end product-inputs-->
+								<div class="product-info">
+									<dl class="dl-horizontal">
+									  <dt>Availabilty:</dt>
+									  <dd>Available In Stock</dd>
+
+									  <dt>Authors:</dt>
+									  <dd><%= @product.author %></dd>
+
+									   <dt>Review Points:</dt>
+									  <dd>25 Points</dd>
+									</dl>
+								</div><!--end product-info-->
+								<div class="product-inputs">
+									<form method="post" action="/add_to_cart" style="display:inline">
+										<div class="input-append" style="display:inline">
+											<input type="hidden" id="quantity" name="quantity" value="1">
+											<input type="hidden" name="product_id" value="<%= @product.id %>"/>
+											<button class="btn btn-primary"><i class="icon-shopping-cart"></i> Add To Cart</button>
+										</div>
+									</form>
+									<button class="btn" data-toggle="tooltip" data-title="+To Wishlist" data-original-title="" title="">
+										<i class="icon-heart"></i>
+									</button><!--end form-->
+								</div>
+							</div><!--end product-set-->
+						</div><!--end span4-->
+						<div class="span8">
+							<div class="review">
+								<form id="form-review" method="post" action="/addreview" class="form-horizontal">
+									<h4>&nbsp;&nbsp;&nbsp;&nbsp;Add Review</h4>
+									<div class="control-group">
+									    <label class="control-label" for="reviewer">Your Name <span class="text-error">*</span></label>
+									    <div class="controls">
+									    	<input type="text" name="reviewer" id="reviewer" placeholder="John Doe..." autofocus>
+									    	<input type="hidden" name="product_id" value="<%= @product.id %>"/>
+									    </div>
+									</div>
+									<div class="control-group">
+										<label class="control-label" for="comment">Your Review <span class="text-error">*</span></label>
+									    <div class="controls">
+									      <textarea name="comment" id="comment" placeholder="Put your review here..."></textarea>
+									    </div>
+									</div>
+									<div class="control-group">
+										<label class="control-label" for="inputReview">Your Rating <span class="text-error">*</span></label>
+									    <div class="controls">
+									       <div class="btn-group" data-toggle="buttons-radio">
+											  <button type="button" name="star" class="btn" data-value="1" data-toggle="tooltip" data-title="1/5"><i class="icon-star"></i></button>
+											  <button type="button" name="star" class="btn" data-value="2" data-toggle="tooltip" data-title="2/5"><i class="icon-star"></i></button>
+											  <button type="button" name="star" class="btn" data-value="3" data-toggle="tooltip" data-title="3/5"><i class="icon-star"></i></button>
+											  <button type="button" name="star" class="btn" data-value="4" data-toggle="tooltip" data-title="4/5"><i class="icon-star"></i></button>
+											  <button type="button" name="star" class="btn" data-value="5" data-toggle="tooltip" data-title="5/5"><i class="icon-star"></i></button>
+										   </div>
+										   <input type="hidden" id="rating" name="rating"/>
+									    </div>
+									</div>
+									<div class="control-group">
+									    <div class="controls">
+									      <button type="submit" class="btn btn-primary">Add Review</button>
+									    </div>
+									</div>
+								</form><!--end form-->
+							</div>
+						</div><!--end span4-->
+					</div>
+				</div><!--end span9-->
+			</div><!--end product-details-->
+
+		</div><!--end row-->
+	</div><!--end span9-->
+
+</div><!--end row-->
+
+
+<% content_for :script do %>
+  	<script>
+	$().ready(function() {
+		$("button[name=star]").click(function () {
+			rating=$(this).attr('data-value');
+			$("#rating").val(rating);
+		});
+
+		$("#form-review").validate({
+			ignore: "",
+			rules: {
+				reviewer: "required",
+				comment: "required",
+				rating: "required",
+			},
+			messages: {
+				reviewer: "Please enter your Name",
+				comment: "Please enter your Review",
+				rating: "Please enter your Rating"
+			},
+			highlight: function(element) {
+				$(element).parent().parent().addClass("error");
+			},
+			unhighlight: function(element) {
+				$(element).parent().parent().removeClass("error");
+			}
+		});
+	});
+	</script>
+<% end %>

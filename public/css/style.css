@@ -552,7 +552,7 @@ footer {margin:50px 0 0 0;}
 	width:100%;
 }
 	.listProductItems li {
-		margin-top:36px;
+		margin-bottom:36px; /* CHANGE */
 	}
 	/* img */
 	.listProductItems .thumbnail {
@@ -586,7 +586,7 @@ footer {margin:50px 0 0 0;}
 	.listProductItems .thumbSetting .thumbTitle a {
 		line-height:20px;
 		font-family: 'Sanchez', serif;
-		font-size: 14px;
+		font-size: 16px; /* CHANGE */
 		font-weight: normal;
 	}
 	/* price */
@@ -890,7 +890,8 @@ footer {margin:50px 0 0 0;}
 	padding:0;
 }
 .product-set .product-info .dl-horizontal dt {
-	width:auto;
+	width: 84px; /* CHANGE */
+    text-align: left;  /* CHANGE */
 }
 .product-set .product-info .dl-horizontal dd {
 	float:left;
@@ -953,12 +954,12 @@ footer {margin:50px 0 0 0;}
 /*========================= product-tab ==================*/
 .product-tab {
 	clear:both;
-	margin-top:48px;
+	margin-top:30px; /* CHANGE */
 }
 	/* read-review */
 	.product-tab #read-review .single-review {
-		padding-bottom:14px;
-		margin-bottom:14px;
+		padding-bottom:10px;
+		margin-bottom:10px;
 		background:url('../img/dottedBorder.png') repeat-x left bottom;
 	}
 	.product-tab #read-review .single-review:last-child {
@@ -1446,7 +1447,7 @@ footer {margin:50px 0 0 0;}
 
 /*================= table-receipt =================*/
 .table-receipt {
-	margin:60px 0 0 0;
+	margin:18px 0 0 0; /* CHANGE */
 }
 	.table-receipt td {
 		padding:8px 0;
@@ -1533,6 +1534,38 @@ footer {margin:50px 0 0 0;}
 		height:1px;
 		margin:20px 0 18px;
 		background:url('../img/dottedBorder.png') repeat-x left top; 
+	}
+
+/*===================== add review ===================== CHANGE*/
+.review .form-horizontal {
+	margin-top:24px;
+	padding:0 0 12px;
+	border:1px solid #e0e0e0;
+	border-top:none;
+}
+	.review .form-horizontal h4 {
+	    padding: 6px 0;
+	    margin-bottom: 14px;
+	    color: #404040;
+	    background-color:#f0f0f0;
+	    border: 0;
+	    border-top: 1px solid #e0e0e0;
+	    border-bottom: 1px solid #e0e0e0;
+	    font-family: 'Sanchez', serif;
+	    font-size:14px;
+	    text-transform: capitalize;
+	    line-height:22px;
+	}
+	.review .form-horizontal hr {
+		padding:0;
+		border:0;
+		height:1px;
+		margin:20px 0 18px;
+		background:url('../img/dottedBorder.png') repeat-x left top; 
+	}
+
+	.review textarea, .review input[type="text"]{
+	width: 350px;
 	}
 
 /*=================== login =================*/

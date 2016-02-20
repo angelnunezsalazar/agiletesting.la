@@ -1,14 +1,7 @@
 <div class="row">
-	<div class="span12">
-		<div class="titleHeader clearfix">
-			<h2>Products</h2>
-		</div>
-	</div>
-</div>
-<div class="row">
 	<ul class="listProductItems clearfix">
 	<% @products.each do |product| %>
-		<li class="clearfix">
+		<li class="clearfix" data-automation="product-id-<%= product.id %>">
 			<div class="span3">
 				<div class="thumbnail">
 					<a href="/productdetails?productid=<%= product.id %>"><img src="products/<%= product.img %>" alt="<%= product.name %>"></a>
@@ -30,7 +23,7 @@
 					</div>
 					<div class="thumbDesc">
 						<p>
-							<%= product.description %> [ <a href="#" data-title="Read More" data-toggle="tooltip" data-placement="top">...</a> ]
+							<%= product.description %>
 						</p>
 					</div>
 

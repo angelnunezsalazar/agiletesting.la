@@ -22,6 +22,7 @@ end
 
 get '/search' do
 	@order_products_count=current_order.products_count
+
 	@products=Product.where(["name LIKE ?", "%#{params[:query]}%"])
 	erb :"index"
 end
@@ -56,6 +57,23 @@ get '/productdetails' do
 	erb :"product_details"
 end
 
+get '/addreview' do
+	@order_products_count=current_order.products_count
+	@product=Product.find(params["productid"])
+	erb :"review"
+end
+
+post '/addreview' do
+	order = current_order
+
+	product_review=ProductReview.new
+	product_review.attributes = params
+	product_review.review_date=Time.now
+	product_review.save
+
+	redirect "/productdetails?productid=#{params[:product_id]}"
+end
+
 get '/shipping' do
 	@order_products_count=current_order.products_count
 	@delivery_options=DeliveryOption.all.order(:id)
@@ -86,6 +104,7 @@ post '/apply-coupon' do
 end
 
 get '/place-order' do
+	@order_products_count=current_order.products_count
 	@order = current_order
 	erb :"place_order"
 end

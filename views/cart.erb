@@ -49,11 +49,11 @@
 		</table>
 	</div><!--end span12-->
 
-
+	<% if @order.order_items.size>0 %>
 	<div class="span7">
-		<div class="checkout-outer" style="margin-top:60px">
+		<div class="checkout-outer" style="margin-top:18px">
 			<div class="checkout-content">
-				<form method="post" action="/apply-coupon" class="form-horizontal">
+				<form method="post" action="/apply-coupon" class="form-horizontal" style="margin-bottom: 0px">
 				  <div class="control-group">
 				    <label class="control-label" for="coupon">
 				    	<strong>Coupon Code</strong>
@@ -62,7 +62,7 @@
 				      <input type="text" id="coupon" name="coupon" placeholder="Enter Coupon Code...">
 				    </div>
 				  </div><!--end control-group-->
-				  <div class="control-group">
+				  <div class="control-group" style="margin-bottom: 0px">
 				    <div class="controls">
 				      <button type="submit" class="btn btn-primary">Apply Coupon</button>
 				    </div>
@@ -89,12 +89,17 @@
 					<td class="alignLeft"><h2>$<%= @order.total %></h2></td>
 				</tr>
 				<tr>
-					<td class="alignRight"><a class="btn" href="/">Continue Shopping</a></td>
-					<td class="alignLeft"><a class="btn btn-primary" href="/shipping">Proceed To Checkout</a></td>
+					<td class="alignRight" style="background: none"><a class="btn" href="/">Continue Shopping</a></td>
+					<td class="alignLeft" style="background: none"><a class="btn btn-primary" href="/shipping">Proceed To Checkout</a></td>
 				</tr>
 			</table>
 		</div>
 	</div><!--end span5-->
-
+	<% else %>
+	<div class="span5">
+		<br/>
+		<h3>Your shopping cart is empty</h3>
+	</div>
+	<% end %>
 
 </div><!--end row-->
