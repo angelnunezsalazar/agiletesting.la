@@ -1,6 +1,7 @@
 require 'sinatra'
 require "sinatra/content_for"
 require 'sinatra/activerecord'
+require 'sinatra/flash'
 require './config/environments'
 require './model/product'
 require './model/order'
@@ -66,10 +67,19 @@ end
 post '/addreview' do
 	order = current_order
 
-	product_review=ProductReview.new
-	product_review.attributes = params
-	product_review.review_date=Time.now
-	product_review.save
+	@product_review=ProductReview.new
+	@product_review.attributes = params
+	
+
+	previous_review=ProductReview.find_by(reviewer: @product_review.reviewer, 
+										  product_id: @product_review.product_id)
+	if !previous_review.nil?
+		flash[:error] = "You have already a review to this product"
+		redirect "/addreview?productid=#{@product_review.product_id}"
+	end
+
+	@product_review.review_date=Time.now
+	@product_review.save
 
 	redirect "/productdetails?productid=#{params[:product_id]}"
 end
@@ -117,6 +127,9 @@ post '/place-order' do
 end
 
 get '/confirmation' do
+	if session[:order_id].nil?
+		redirect '/'
+	end
 	@order = current_order
 	session.clear
 	erb :"confirmation"

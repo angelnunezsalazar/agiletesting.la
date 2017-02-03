@@ -5,6 +5,7 @@ gem "activerecord"
 gem "sinatra-activerecord"
 gem "business_time"
 gem "sinatra-contrib"
+gem "sinatra-flash"
 
 group :development do
  gem 'sqlite3'

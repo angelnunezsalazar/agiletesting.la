@@ -76,7 +76,7 @@
 							<tr>
 								<td colspan="2" style="background: none">
 								<form method="post" action="/place-order" class="form-horizontal">
-									<button class="btn btn-primary">Place Your Order</button></td>
+									<button id="submit-button" class="btn btn-primary">Place Your Order</button></td>
 								</form>
 							</tr>
 						</tbody></table>
@@ -87,3 +87,19 @@
 	</div><!--end row-->
 
 </div><!--end conatiner-->
+
+<% content_for :script do %>
+  	<script>
+	$().ready(function() {
+		$('form').on('submit', function(e) {
+		    e.preventDefault();
+		    $('body').addClass("loading");
+		    var form=this;
+		    var time=Math.floor((Math.random() * 5) + 3);
+		    window.setTimeout(function(){
+		    	form.submit();
+		    }, time*1000);
+		});
+	});
+	</script>
+<% end %>
