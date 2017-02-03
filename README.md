@@ -6,4 +6,6 @@ Instrucciones
 
 - Subir a Heroku
 
-	$ git push heroku master
+	$ git push origin master
+
+	Ir a la consola web de heroku y desplegar manualmente.
