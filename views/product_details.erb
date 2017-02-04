@@ -22,7 +22,7 @@
 								<div class="product-rate clearfix">
 									<%= erb(:stars,:locals => { :stars => @product.review_stars }) %>
 									<span><%= @product.product_reviews.size %> Review(s)</span>
-									<span><a href="/addreview?productid=<%= @product.id %>">Make a Review</a></span>
+									<span><a id="add-review" href="/addreview?productid=<%= @product.id %>">Make a Review</a></span>
 								</div><!--end product-inputs-->
 								<div class="product-info">
 									<dl class="dl-horizontal">
@@ -41,7 +41,7 @@
 										<div class="input-append" style="display:inline">
 											<input type="hidden" id="quantity" name="quantity" value="1">
 											<input type="hidden" name="product_id" value="<%= @product.id %>"/>
-											<button class="btn btn-primary"><i class="icon-shopping-cart"></i> Add To Cart</button>
+											<button id="add-to-cart" class="btn btn-primary"><i class="icon-shopping-cart"></i> Add To Cart</button>
 										</div>
 									</form>
 									<button class="btn" data-toggle="tooltip" data-title="+To Wishlist" data-original-title="" title="">
