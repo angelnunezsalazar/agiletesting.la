@@ -12,4 +12,8 @@ class Product < ActiveRecord::Base
 	def review_stars
 		average_rating.round
 	end
+
+	def number_of_reviews
+		product_reviews.size
+	end
 end

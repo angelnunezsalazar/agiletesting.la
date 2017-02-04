@@ -4,6 +4,7 @@ require 'sinatra/activerecord'
 require 'sinatra/flash'
 require './config/environments'
 require './model/product'
+require './model/product_tenant'
 require './model/order'
 require './model/order_item'
 require './model/shipping_detail'
@@ -27,7 +28,6 @@ get '/search' do
 	@products=Product.where(["name LIKE ?", "%#{params[:query]}%"])
 	erb :"index"
 end
-
 
 post '/add_to_cart' do
 	order = current_order
@@ -155,3 +155,63 @@ def current_order
     	Order.new
     end
 end
+
+################ Tenant #####################
+
+get '/tenantsearch' do
+	@order_products_count=current_order.products_count
+	@products=ProductTenant.where(["tenant = ? and name LIKE ?",params[:tenant], "%#{params[:query]}%"])
+	@tenant=params[:tenant]
+	erb :"index"
+end
+
+post '/loadproducts' do
+	ProductTenant.load(params[:tenant])
+	redirect "/#{params[:tenant]}"
+end
+
+get '/:tenant' do
+	@order_products_count=current_order.products_count
+	@products=ProductTenant.where("tenant = ?",params[:tenant])
+	if @products.size == 0
+		@new_tenant=true;
+	end
+	@tenant=params[:tenant]
+	erb :"index"
+end
+
+################ API #####################
+
+get '/api/allproducts/:tenant' do
+	products=ProductTenant.where(tenant: params[:tenant])
+	products.to_json
+end
+
+get '/api/deleteproducts/:tenant' do
+	ProductTenant.delete_all(tenant: params[:tenant])
+	{ :result => 'Successfully'}.to_json
+end
+
+post '/api/addproduct/:tenant' do
+	new_product = JSON.parse(request.body.read)
+
+	@product=ProductTenant.new
+	@product.tenant = new_product["tenant"]
+	@product.name = new_product["name"]
+	@product.description = new_product["description"]
+	@product.price = new_product["price"]
+	@product.author = new_product["author"]
+	@product.save
+	{ :result => 'Successfully'}.to_json
+end
+
+get '/api/allreviews/:reviewer' do
+	reviews=ProductReview.where(reviewer: params[:reviewer])
+	reviews.to_json
+end
+
+get '/api/deletereviews/:reviewer' do
+	ProductReview.delete_all(reviewer: params[:reviewer])
+	{ :result => 'Successfully'}.to_json
+end
+

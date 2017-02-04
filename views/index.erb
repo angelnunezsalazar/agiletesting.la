@@ -1,3 +1,13 @@
+<% if @new_tenant %>
+	<div class="row">
+		<h3>Hi <%= @tenant %></h3>
+		<p>There are no products in your store.</p>
+		<form method="post" action="/loadproducts" class="form-horizontal" style="margin-bottom: 0px">
+			<input type="hidden" id="tenant" name="tenant" value="<%= @tenant %>">
+			<button type="submit" class="btn btn-primary">Load Products to your store</button>
+		</form>
+	</div>
+<% end %>
 <div class="row">
 	<ul class="listProductItems clearfix">
 	<% @products.each do |product| %>
@@ -19,7 +29,7 @@
 					</div>
 					<div class="thumbRating clearfix">
 						<%= erb(:stars,:locals => { :stars => product.review_stars }) %>
-						<strong><%= product.product_reviews.size %> Reviews</strong>
+						<strong><%= product.number_of_reviews %> Reviews</strong>
 					</div>
 					<div class="thumbDesc">
 						<p>

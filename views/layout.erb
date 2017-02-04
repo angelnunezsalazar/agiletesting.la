@@ -52,22 +52,32 @@
 					<div class="middleContainer clearfix">
 
 					<div class="siteLogo pull-left">
-						<h1><a href="/">ShopFine</a></h1>
+						<h1><a <%= !@tenant.nil?  ? 'class=allowedLink' : ''%> href="/<%= @tenant %>">ShopFine</a></h1>
 					</div>
 
 					<div class="pull-right">
+						<% if !@tenant.nil? %>
+						<form method="get" action="/tenantsearch" class="siteSearch">
+							<div class="input-append">
+								<input type="hidden" id="tenant" name="tenant" value="<%= @tenant %>">
+								<input type="text" class="span2" name="query" placeholder="Search...">
+								<button class="btn btn-primary allowedLink" type="submit" name=""><i class="icon-search"></i></button>
+							</div>
+						</form>
+						<% else %>
 						<form method="get" action="/search" class="siteSearch">
 							<div class="input-append">
 								<input type="text" class="span2" name="query" placeholder="Search...">
 								<button class="btn btn-primary" type="submit" name=""><i class="icon-search"></i></button>
 							</div>
 						</form>
+						<% end %>
 					</div>
 
 					<div class="pull-right">
 						<div class="btn-group">
 							<a class="btn" href="/cart">
-							    <i class="icon-shopping-cart"></i> <%= @order_products_count %> Items
+								<i class="icon-shopping-cart"></i> <%= @order_products_count %> Items
 							</a>
 						</div>
 					</div><!--end pull-right-->
@@ -190,9 +200,9 @@
 
 	<div class="modal">
 		<div class="modal-content">
-	    	<h3><img src="img/loader.gif" alt="Loading.."/> Processing ...</h3>
-	    	</br>
-	    	<p>Please wait while we are processing your order.<p>
+			<h3><img src="img/loader.gif" alt="Loading.."/> Processing ...</h3>
+			</br>
+			<p>Please wait while we are processing your order.<p>
 		</div>
 	</div>
 
@@ -205,16 +215,32 @@
 	<!-- jQuery.Cookie -->
 	<script src="js/jquery.cookie.js"></script>
 	<!-- bootstrap -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- tweets -->
-    <script src="js/jquery.tweet.js"></script>
-    <!-- fancybox -->
-    <script src="js/fancybox/jquery.fancybox.js"></script>
-    <!-- custom function-->
-    <script src="js/custom.js"></script>
-    
-    <%= yield_content :script %>
+	<script src="js/bootstrap.min.js"></script>
+	<!-- tweets -->
+	<script src="js/jquery.tweet.js"></script>
+	<!-- fancybox -->
+	<script src="js/fancybox/jquery.fancybox.js"></script>
+	<!-- custom function-->
+	<script src="js/custom.js"></script>
+	
+	<%= yield_content :script %>
 
+	<% if !@tenant.nil? %>
+	<script>
+		$(function() {
+		  	$('a').on('click', function(e) {
+				if (!$(this).hasClass('allowedLink')) {
+				  e.preventDefault();
+				}
+		  	});
+			$('button').on('click', function(e) {
+				if (!$(this).hasClass('allowedLink')) {
+				  e.preventDefault();
+				}
+		  	});
+		});
+	</script>
+	<% end %>
 </body>
 
 </html>
