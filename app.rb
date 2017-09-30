@@ -182,6 +182,11 @@ end
 
 ################ API #####################
 
+get '/api/allproducts/' do
+	products=Product.all
+	products.to_json
+end
+
 get '/api/allproducts/:tenant' do
 	products=ProductTenant.where(tenant: params[:tenant])
 	products.to_json
@@ -189,6 +194,18 @@ end
 
 get '/api/deleteproducts/:tenant' do
 	ProductTenant.delete_all(tenant: params[:tenant])
+	{ :result => 'Successfully'}.to_json
+end
+
+post '/api/addproduct/' do
+	new_product = JSON.parse(request.body.read)
+
+	@product=Product.new
+	@product.name = new_product["name"]
+	@product.description = new_product["description"]
+	@product.price = new_product["price"]
+	@product.author = new_product["author"]
+	@product.save
 	{ :result => 'Successfully'}.to_json
 end
 
