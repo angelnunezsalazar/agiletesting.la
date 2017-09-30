@@ -238,8 +238,9 @@ get '/api/deletereviews' do
 	{ :result => 'Successfully'}.to_json
 end
 
-get '/api/deletereviews/:reviewer' do
-	ProductReview.delete_all(reviewer: params[:reviewer])
+post '/api/deletereviews' do
+	data = JSON.parse(request.body.read)
+	ProductReview.delete_all(reviewer: data["reviewer"])
 	{ :result => 'Successfully'}.to_json
 end
 
