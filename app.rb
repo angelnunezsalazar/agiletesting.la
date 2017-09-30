@@ -199,8 +199,9 @@ post '/api/addproduct/' do
 	{ :result => 'Successfully'}.to_json
 end
 
-get '/api/deleteproduct/:name' do
-	Product.delete_all(name: params[:name])
+post '/api/deleteproduct' do
+	data = JSON.parse(request.body.read)
+	Product.delete_all(name: data["name"])
 	{ :result => 'Successfully'}.to_json
 end
 
