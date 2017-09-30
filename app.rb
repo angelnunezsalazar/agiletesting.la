@@ -201,7 +201,7 @@ end
 
 post '/api/deleteproduct' do
 	data = JSON.parse(request.body.read)
-	Product.delete_all(name: data["name"])
+	Product.delete_all(name: data["productname"])
 	{ :result => 'Successfully'}.to_json
 end
 
