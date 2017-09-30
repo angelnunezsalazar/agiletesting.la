@@ -233,6 +233,11 @@ get '/api/allreviews/:reviewer' do
 	reviews.to_json
 end
 
+get '/api/deletereviews' do
+	ProductReview.delete_all()
+	{ :result => 'Successfully'}.to_json
+end
+
 get '/api/deletereviews/:reviewer' do
 	ProductReview.delete_all(reviewer: params[:reviewer])
 	{ :result => 'Successfully'}.to_json
