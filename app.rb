@@ -25,7 +25,7 @@ end
 get '/search' do
 	@order_products_count=current_order.products_count
 
-	@products=Product.where(["name LIKE ?", "%#{params[:query]}%"])
+	@products=Product.where(["name ILIKE ?", "%#{params[:query]}%"])
 	erb :"index"
 end
 

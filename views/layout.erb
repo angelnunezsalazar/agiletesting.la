@@ -61,14 +61,14 @@
 							<div class="input-append">
 								<input type="hidden" id="tenant" name="tenant" value="<%= @tenant %>">
 								<input type="text" class="span2" name="query" placeholder="Search...">
-								<button class="btn btn-primary allowedLink" type="submit" name=""><i class="icon-search"></i></button>
+								<button class="btn btn-primary allowedLink" type="submit" name="search"><i class="icon-search"></i></button>
 							</div>
 						</form>
 						<% else %>
 						<form method="get" action="/search" class="siteSearch">
 							<div class="input-append">
 								<input type="text" class="span2" name="query" placeholder="Search...">
-								<button class="btn btn-primary" type="submit" name=""><i class="icon-search"></i></button>
+								<button class="btn btn-primary" type="submit" name="search"><i class="icon-search"></i></button>
 							</div>
 						</form>
 						<% end %>
