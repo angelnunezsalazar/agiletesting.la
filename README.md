@@ -12,4 +12,4 @@ Instrucciones
 
 - Ver los logs
 
-	$ heroku logs --app test-automation-shop
+	$ heroku logs --app agiletesting
