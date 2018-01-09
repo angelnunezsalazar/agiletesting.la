@@ -748,6 +748,14 @@ section#materiales .service-box {
 	padding: 20px;
 }
 
+
+section#assessment h5 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    text-align: center;
+}
+
 /* === section services === */
 
 section#services h2 {
