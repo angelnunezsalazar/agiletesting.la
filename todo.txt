@@ -1,0 +1,33 @@
+********
+BACKLOG
+********
+
+MVP
+=======
+
+Social
+- Metadata
+
+Data
+- Cargar Datos de los Assessments
+- Prueba Automatizada
+
+NEXT
+==========
+
+Pantalla 1
+- (opcional) ícono de pilar
+
+Pantalla 2
+- Footer de compartir
+
+Performance
+- Mejorar la performance del /finish
+- Error en formularios con efecto fadein
+
+TEST STRATEGY
+============
+
+Pensar de Antemano en la automatización
+- questions.update_averages
+- questions answer[x][answer] (pensar en un buen identificador)

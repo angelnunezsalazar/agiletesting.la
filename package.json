@@ -1,0 +1,14 @@
+{
+  "name": "agiletesting.la",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "scss": "node-sass public/css -watch -o public/css"
+  },
+  "author": "Angel Nuñez @Snahider",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^2.7.1"
+  }
+}

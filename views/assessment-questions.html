@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Agile Testing Assessment</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="/lib/font-google/font-google-raleway-roboto.css" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <section class="assessment-questions">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-12">
+          <div class="bs-wizard col-md-12">
+              <div id="step-1-nav" class="col-4 bs-wizard-step complete">
+                <p class="text-center bs-wizard-stepnum">Paso 1</p>
+                <div class="progress"><div class="progress-bar"></div></div>
+                <span href="#" class="bs-wizard-dot"></span>
+                <p class="bs-wizard-info text-center">Enfoque de Todo el Equipo</p>
+              </div>
+              
+              <div id="step-2-nav" class="col-4 bs-wizard-step disabled">
+                <p class="text-center bs-wizard-stepnum">Paso 2</p>
+                <div class="progress"><div class="progress-bar"></div></div>
+                <span href="#" class="bs-wizard-dot"></span>
+                <p class="bs-wizard-info text-center">Automatización de Pruebas</p>
+              </div>
+              
+              <div id="step-3-nav" class="col-4 bs-wizard-step disabled">
+                <p class="text-center bs-wizard-stepnum">Paso 3</p>
+                <div class="progress"><div class="progress-bar"></div></div>
+                <span href="#" class="bs-wizard-dot"></span>
+                <p class="bs-wizard-info text-center">Pruebas de Software</p>
+              </div>
+          </div>
+          <div class="questions">
+            <form id="questions-form" action="/assessment-finish" method="post" role="form">
+              <div id="step-1" style="display: block">
+                <div class="text-center">
+                  <h2 class="section-title">Enfoque de Todo el Equipo</h2>
+                  <p class="lead">Todos somos responsables de la calidad y todos colaboramos realizando diversas actividades de testing.</p>
+                </div>
+                <div class="alert alert-secondary text-center" role="alert">
+                    <h4 class="alert-heading">Evalua a tu Nivel de Madurez</h4>
+                    <p class="mb-0">Evalua cada una de las siguientes sentencias en una escala de frecuencia del 1-Nunca al 5-Siempre.</p>
+                </div>
+                <div class="form">
+                    <% @questions_whole_team.each do |question| %>
+                    <div class="form-group">
+                      <p><%= question.description %></p>
+                      <select id="<%= question.name %>" name="answers[<%= question.id %>][answer]" class="form-control" data-rule-required="true" data-msg-required="Por favor selecciona una respuesta">
+                        <option selected disabled value="">Selecciona una respuesta</option> 
+                        <option value="1">1 - Nunca</option>
+                        <option value="2">2 - Rara Vez</option>
+                        <option value="3">3 - Algunas Veces</option>
+                        <option value="4">4 - Casi Siempre</option>
+                        <option value="5">5 - Siempre</option>
+                      </select>
+                      <input type="hidden" name="answers[<%= question.id %>][question]" value="<%= question.id %>">
+                      <input type="hidden" name="answers[<%= question.id %>][pillar]" value="1">
+                    </div>
+                    <% end %>
+                    <div class="form-group text-center"><button id="step-1-next">Continuar</button></div>
+                </div>
+              </div>
+              <div id="step-2" style="display: none">
+                <div class="text-center">
+                  <h2 class="section-title">Automatización de Pruebas</h2>
+                  <p class="lead">Una efectiva automatización de pruebas permite ahorrar mucho tiempo en la ejecución de chequeos repetitivos y laboriosos.</p>
+                </div>
+                <div class="alert alert-secondary text-center" role="alert">
+                    <h4 class="alert-heading">Evalua a tu Nivel de Madurez</h4>
+                    <p class="mb-0">Evalua cada una de las siguientes sentencias en una escala de frecuencia del 1-Nunca al 5-Siempre.</p>
+                </div>
+                <div class="form">
+                    <% @questions_automation.each do |question| %>
+                    <div class="form-group">
+                      <p><%= question.description %></p>
+                      <select id="<%= question.name %>" name="answers[<%= question.id %>][answer]" class="form-control" data-rule-required="true" data-msg-required="Por favor selecciona una respuesta">
+                        <option selected disabled value="">Selecciona una respuesta</option>
+                        <option value="1">1 - Nunca</option>
+                        <option value="2">2 - Rara Vez</option>
+                        <option value="3">3 - Algunas Veces</option>
+                        <option value="4">4 - Casi Siempre</option>
+                        <option value="5">5 - Siempre</option>
+                      </select>
+                      <input type="hidden" name="answers[<%= question.id %>][question]" value="<%= question.id %>">
+                      <input type="hidden" name="answers[<%= question.id %>][pillar]" value="2">
+                    </div>
+                    <% end %>
+                    <div class="form-group text-center">
+                      <button id="step-2-back" class="secondary-button" type="submit">Regresar</button>
+                      <button id="step-2-next">Continuar</button>
+                    </div>
+                </div>
+              </div>
+              <div id="step-3" style="display: none">
+                <div class="text-center">
+                  <h2 class="section-title">Pruebas de Software</h2>
+                  <p class="lead">Se enfoca en la excelencia, profesión y artesanía en las pruebas de software ya que esto potencia la agilidad.</p>
+                </div>
+                <div class="alert alert-secondary text-center" role="alert">
+                    <h4 class="alert-heading">Evalua a tu Nivel de Madurez</h4>
+                    <p class="mb-0">Evalua cada una de las siguientes sentencias en una escala de frecuencia del 1-Nunca al 5-Siempre.</p>
+                </div>
+                <div class="form">
+                    <% @questions_testing.each do |question| %>
+                    <div class="form-group">
+                      <p><%= question.description %></p>
+                      <select id="<%= question.name %>" name="answers[<%= question.id %>][answer]" class="form-control" data-rule-required="true" data-msg-required="Por favor selecciona una respuesta">
+                        <option selected disabled value="">Selecciona una respuesta</option>
+                        <option value="1">1 - Nunca</option>
+                        <option value="2">2 - Rara Vez</option>
+                        <option value="3">3 - Algunas Veces</option>
+                        <option value="4">4 - Casi Siempre</option>
+                        <option value="5">5 - Siempre</option>
+                      </select>
+                      <input type="hidden" name="answers[<%= question.id %>][question]" value="<%= question.id %>">
+                      <input type="hidden" name="answers[<%= question.id %>][pillar]" value="3">
+                    </div>
+                    <% end %>
+                    <div class="form-group text-center">
+                      <button id="step-3-back" class="secondary-button" type="submit">Regresar</button>
+                      <button id="step-3-next" type="submit">Finalizar</button>
+                    </div>
+                </div>
+              </div>  
+            </div>
+            <input type="hidden" name="assessment_id" value="<%= @assessment_id %>">
+          </form>
+        </div>  
+      </div>
+    </div>
+  </section>
+
+  <!-- Required JavaScript Libraries -->
+  <script src="/lib/jquery/jquery.min.js"></script>
+  <script src="/lib/easing/easing.js"></script>
+  <script src="/lib/jquery-validation/jquery.validate.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      var numberOfSteps = 3;
+      buttonNextOnClick();
+      buttonBackOnClick();
+
+      function buttonNextOnClick(){
+        for (i = 1; i <= numberOfSteps-1; i++) {
+          $("#step-" + i + "-next").click({ num: i },function(e) {
+            e.preventDefault();
+            var form = $("#questions-form");
+            form.validate();
+
+            if (form.valid()){
+              var num=e.data.num;
+              $("#step-" + num).fadeOut(function(){
+                $("#step-" + (num + 1)).fadeIn(); 
+                $("#step-" + (num + 1)+"-nav").addClass("complete");
+                $("#step-" + (num + 1)+"-nav").removeClass("disabled");
+              });
+              $("html, body").animate({ scrollTop: 0 }, "slow");
+              
+              if(historyApi()){
+                var step=num+1;
+                history.pushState({step:step}, null, "?step-" + step);
+              }
+            }
+          });
+        }
+      }
+
+      function buttonBackOnClick(){
+        for (i = 2; i <= numberOfSteps; i++) {
+          $("#step-" + i + "-back").click({ num: i },function(e) {
+            e.preventDefault();
+            if(historyApi()){
+              history.back();
+            }
+            else{
+              var num=e.data.num;
+              returnFromStep(num)
+            }
+          });
+        }
+      }
+
+      function returnFromStep(currentStep){
+        $("#step-" + currentStep).fadeOut(function(){
+          $("#step-" + currentStep+ " .form .form-group").removeClass("has-error");
+          $("#step-" + (currentStep - 1)).fadeIn(); 
+          $("#step-" + currentStep+"-nav").addClass("disabled");
+          $("#step-" + currentStep+"-nav").removeClass("complete");
+          $("#step-" + (currentStep - 1)+"-nav").addClass("complete");
+        });
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+      }
+
+			$("#questions-form").validate( {
+				errorElement: "small",
+				errorPlacement: function ( error, element ) {
+					error.addClass( "form-text" );
+					error.insertAfter( element );
+				},
+				highlight: function ( element, errorClass, validClass ) {
+					$( element ).parents( ".form-group" ).addClass( "has-error" ).removeClass( "has-success" );
+				},
+				unhighlight: function (element, errorClass, validClass) {
+					$( element ).parents( ".form-group" ).addClass( "has-success" ).removeClass( "has-error" );
+				}
+      });
+
+      if(historyApi()){
+        window.addEventListener("popstate", function(e) {
+            var newStep=e.state.step;
+            returnFromStep(newStep+1);
+        });
+        history.pushState({step:1}, null, "?step-1");
+      }
+
+      function historyApi() {
+        return !!(window.history && history.pushState);
+      }
+
+    });
+	</script>
+</body>
+</html>  
