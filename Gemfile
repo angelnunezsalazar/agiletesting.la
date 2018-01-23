@@ -10,7 +10,6 @@ gem 'rake'
 gem 'sprockets'
 gem 'sprockets-helpers'
 gem 'uglifier'
-gem 'yui-compressor'
 gem 'sass'
 
 group :development do
