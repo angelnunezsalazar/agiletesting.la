@@ -1,0 +1,61 @@
+// -------------------------------------------------
+// Site Specific Variables
+// -------------------------------------------------
+
+// Example, group similar variables, only use variables for common colours & values
+// $all-lowercase: value;
+
+$font-primary: 'Raleway', Helvetica, Arial, sans-serif;
+$font-secondary: 'Roboto', Helvetica, Arial, sans-serif;
+$color-primary: #5cb85c;
+$color-paragraph: #495957;
+$color-paragraph-bold: #464a4e;
+$color-error: #a94442;//#d9534f
+$background-color-highlight: #f7f7f7;
+$background-color-highlight-bold: #dddfe2;//#e7e8ea;
+
+$font-size-x-large: 60px;
+$font-size-large: 30px;
+$font-size-medium: 26px;
+$font-size-sm-medium: 24px;
+$font-size-small: 18px;
+$font-size-paragraph: 18px;
+
+$line-height: 1.55;
+
+h1, h2, h3, h4, h5, h6{
+	font-family: $font-primary;
+	color: $color-primary;
+}
+
+p{
+	line-height: $line-height;
+	color: $color-paragraph;
+	font-size: $font-size-paragraph;
+	font-family: $font-primary;
+}
+
+ul{
+	line-height: $line-height;
+	color: $color-paragraph;
+	font-size: $font-size-paragraph;
+	font-family: $font-primary;
+}
+
+h1{
+	font-size: $font-size-x-large;
+}
+
+h2{
+	font-size: $font-size-large;
+	margin-bottom: 60px;
+}
+
+h3{
+	font-size: $font-size-sm-medium;
+	margin-bottom: 20px;
+}
+
+h4{
+	font-size: $font-size-small;
+}

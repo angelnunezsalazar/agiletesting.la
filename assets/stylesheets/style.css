@@ -1,0 +1,1050 @@
+/*
+    Theme Name: Bell
+    Theme URL: https://bootstrapmade.com/bell-free-bootstrap-4-template/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+*/
+/* line 26, public/css/_variables.scss */
+/* line 8, public/css/style.css */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  color: #5cb85c; }
+
+/* line 31, public/css/_variables.scss */
+/* line 13, public/css/style.css */
+p {
+  line-height: 1.55;
+  color: #495957;
+  font-size: 18px;
+  font-family: "Raleway", Helvetica, Arial, sans-serif; }
+
+/* line 38, public/css/_variables.scss */
+/* line 20, public/css/style.css */
+ul {
+  line-height: 1.55;
+  color: #495957;
+  font-size: 18px;
+  font-family: "Raleway", Helvetica, Arial, sans-serif; }
+
+/* line 45, public/css/_variables.scss */
+/* line 27, public/css/style.css */
+h1 {
+  font-size: 60px; }
+
+/* line 49, public/css/_variables.scss */
+/* line 31, public/css/style.css */
+h2 {
+  font-size: 30px;
+  margin-bottom: 60px; }
+
+/* line 54, public/css/_variables.scss */
+/* line 36, public/css/style.css */
+h3 {
+  font-size: 24px;
+  margin-bottom: 20px; }
+
+/* line 59, public/css/_variables.scss */
+/* line 41, public/css/style.css */
+h4 {
+  font-size: 18px; }
+
+/* ==================================================
+  General
+  ================================================== */
+/* line 15, public/css/style.scss */
+/* line 48, public/css/style.css */
+a {
+  transition: 0.5s; }
+
+/* ==================================================
+  Elements
+  ================================================== */
+/* line 23, public/css/style.scss */
+/* line 55, public/css/style.css */
+.btn {
+  background-color: #5cb85c;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  color: #fff;
+  padding: 15px 45px;
+  border-radius: 50px; }
+
+/* line 29, public/css/style.scss */
+/* line 62, public/css/style.css */
+.btn:hover {
+  background-color: #fff;
+  color: #5cb85c; }
+
+/* line 35, public/css/style.scss */
+/* line 67, public/css/style.css */
+.btn-ghost {
+  border: 3px solid #fff;
+  background-color: transparent; }
+
+/* line 38, public/css/style.scss */
+/* line 71, public/css/style.css */
+.btn-ghost:hover {
+  background-color: #fff;
+  color: #5cb85c; }
+
+/* line 43, public/css/style.scss */
+/* line 76, public/css/style.css */
+section {
+  padding: 85px 0; }
+
+/* line 46, public/css/style.scss */
+/* line 80, public/css/style.css */
+.card {
+  position: relative;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  overflow: hidden; }
+
+/* line 54, public/css/style.scss */
+/* line 89, public/css/style.css */
+a:hover {
+  text-decoration: none !important; }
+
+/* line 57, public/css/style.scss */
+/* line 93, public/css/style.css */
+.scrolltop {
+  display: none;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #5cb85c;
+  color: #fff;
+  text-align: center;
+  font-size: 24px; }
+
+/* line 69, public/css/style.scss */
+/* line 106, public/css/style.css */
+.scrolltop:hover, .scrolltop:active, .scrolltop:focus {
+  color: #fff !important;
+  opacity: .75; }
+
+/* ==================================================
+  Hero Styling
+================================================== */
+/* line 79, public/css/style.scss */
+/* line 114, public/css/style.css */
+.hero {
+  display: table;
+  position: relative;
+  background-image: url(../img/agile-testing-manifesto.png);
+  background-position: center;
+  background-size: cover;
+  padding: 150px 0;
+  color: #fff;
+  width: 100%;
+  height: 100vh; }
+
+/* line 89, public/css/style.scss */
+/* line 125, public/css/style.css */
+.hero:after {
+  content: '';
+  z-index: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.65);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0; }
+
+/* line 99, public/css/style.scss */
+/* line 135, public/css/style.css */
+.hero .container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%; }
+
+/* line 109, public/css/style.scss */
+/* line 144, public/css/style.css */
+.hero-brand {
+  margin-bottom: 75px;
+  display: inline-block; }
+
+/* line 112, public/css/style.scss */
+/* line 148, public/css/style.css */
+.hero-brand:hover {
+  opacity: .75; }
+
+/* line 117, public/css/style.scss */
+/* line 152, public/css/style.css */
+.tagline {
+  margin: 45px 0 75px 0; }
+
+/* line 121, public/css/style.scss */
+/* line 156, public/css/style.css */
+.tagline p {
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-size: 26px;
+  margin-bottom: 45px;
+  color: #fff; }
+
+/* ==================================================
+  Header Styling
+================================================== */
+/* line 131, public/css/style.scss */
+/* line 166, public/css/style.css */
+#header {
+  background: #5cb85c;
+  height: 70px; }
+
+/* line 135, public/css/style.scss */
+/* line 170, public/css/style.css */
+#header #logo {
+  margin: 14px 25px 0 0; }
+
+/* line 137, public/css/style.scss */
+/* line 173, public/css/style.css */
+#header #logo h1 {
+  font-size: 36px;
+  margin: 0;
+  padding: 2px 0;
+  line-height: 1;
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase; }
+
+/* line 148, public/css/style.scss */
+/* line 183, public/css/style.css */
+#header #logo h1 a, #header #logo h1 a:hover {
+  color: #fff; }
+
+/* line 152, public/css/style.scss */
+/* line 186, public/css/style.css */
+#header #logo img {
+  padding: 0;
+  margin: 0;
+  max-height: 40px; }
+
+@media (max-width: 768px) {
+  /* line 131, public/css/style.scss */
+  /* line 192, public/css/style.css */
+  #header {
+    height: 50px; }
+  /* line 160, public/css/style.scss */
+  /* line 195, public/css/style.css */
+  #header #logo {
+    margin: 10px 0 0 0; }
+  /* line 162, public/css/style.scss */
+  /* line 198, public/css/style.css */
+  #header #logo h1 {
+    padding: 2px 0;
+    font-size: 26px; }
+  /* line 167, public/css/style.scss */
+  /* line 202, public/css/style.css */
+  #header #logo img {
+    max-height: 30px; } }
+
+/* line 173, public/css/style.scss */
+/* line 205, public/css/style.css */
+#header .social-nav {
+  margin-top: 15px; }
+
+/* line 175, public/css/style.scss */
+/* line 208, public/css/style.css */
+#header .social-nav a {
+  font-size: 24px;
+  margin-left: 15px;
+  color: #fff; }
+
+/* line 179, public/css/style.scss */
+/* line 213, public/css/style.css */
+#header .social-nav a:hover {
+  color: rgba(255, 255, 255, 0.75); }
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Nav Menu Essentials */
+/* line 192, public/css/style.scss */
+/* line 221, public/css/style.css */
+.nav-menu, .nav-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+/* line 198, public/css/style.scss */
+/* line 227, public/css/style.css */
+.nav-menu ul {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  z-index: 99; }
+
+/* line 206, public/css/style.scss */
+/* line 235, public/css/style.css */
+.nav-menu li {
+  position: relative;
+  white-space: nowrap; }
+
+/* line 211, public/css/style.scss */
+/* line 240, public/css/style.css */
+.nav-menu > li {
+  float: left; }
+
+/* line 215, public/css/style.scss */
+/* line 244, public/css/style.css */
+.nav-menu li:hover > ul,
+.nav-menu li.sfHover > ul {
+  display: block; }
+
+/* line 220, public/css/style.scss */
+/* line 249, public/css/style.css */
+.nav-menu ul ul {
+  top: 0;
+  left: 100%; }
+
+/* line 225, public/css/style.scss */
+/* line 254, public/css/style.css */
+.nav-menu ul li {
+  min-width: 180px; }
+
+/* Nav Menu Arrows */
+/* line 232, public/css/style.scss */
+/* line 259, public/css/style.css */
+.sf-arrows .sf-with-ul {
+  padding-right: 30px; }
+
+/* line 236, public/css/style.scss */
+/* line 263, public/css/style.css */
+.sf-arrows .sf-with-ul:after {
+  content: "\f107";
+  position: absolute;
+  right: 15px;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal; }
+
+/* line 245, public/css/style.scss */
+/* line 272, public/css/style.css */
+.sf-arrows ul .sf-with-ul:after {
+  content: "\f105"; }
+
+/* Nav Meu Container */
+/* line 251, public/css/style.scss */
+/* line 277, public/css/style.css */
+#nav-menu-container {
+  margin: 0; }
+
+@media (max-width: 768px) {
+  /* line 251, public/css/style.scss */
+  /* line 281, public/css/style.css */
+  #nav-menu-container {
+    display: none; } }
+
+/* Nav Meu Styling */
+/* line 260, public/css/style.scss */
+/* line 286, public/css/style.css */
+.nav-menu a {
+  padding: 22px 15px 18px 15px;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  outline: none; }
+
+/* line 271, public/css/style.scss */
+/* line 297, public/css/style.css */
+.nav-menu a:hover, .nav-menu li:hover > a, .nav-menu .menu-active > a {
+  color: rgba(255, 255, 255, 0.75); }
+
+/* line 275, public/css/style.scss */
+/* line 301, public/css/style.css */
+.nav-menu ul {
+  margin: 4px 0 0 15px;
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.08); }
+
+/* line 279, public/css/style.scss */
+/* line 305, public/css/style.css */
+.nav-menu ul li {
+  background: #fff;
+  border-top: 1px solid #f4f4f4; }
+
+/* line 282, public/css/style.scss */
+/* line 309, public/css/style.css */
+.nav-menu ul li:first-child {
+  border-top: 0; }
+
+/* line 286, public/css/style.scss */
+/* line 312, public/css/style.css */
+.nav-menu ul li:hover {
+  background: #5cb85c;
+  transition: 0.3s; }
+
+/* line 290, public/css/style.scss */
+/* line 316, public/css/style.css */
+.nav-menu ul li a {
+  color: #333;
+  transition: none;
+  padding: 10px 15px; }
+
+/* line 294, public/css/style.scss */
+/* line 321, public/css/style.css */
+.nav-menu ul li a:hover {
+  color: #fff; }
+
+/* line 302, public/css/style.scss */
+/* line 324, public/css/style.css */
+.nav-menu ul ul {
+  margin: 0; }
+
+/* Mobile Nav Toggle */
+/* line 309, public/css/style.scss */
+/* line 329, public/css/style.css */
+#mobile-nav-toggle {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  margin: 8px 10px 0 0;
+  border: 0;
+  background: none;
+  font-size: 24px;
+  display: none;
+  transition: all 0.4s;
+  outline: none;
+  cursor: pointer; }
+
+/* line 323, public/css/style.scss */
+/* line 343, public/css/style.css */
+#mobile-nav-toggle i {
+  color: #fff; }
+
+@media (max-width: 768px) {
+  /* line 309, public/css/style.scss */
+  /* line 347, public/css/style.css */
+  #mobile-nav-toggle {
+    display: inline; } }
+
+/* Mobile Nav Styling */
+/* line 334, public/css/style.scss */
+/* line 352, public/css/style.css */
+#mobile-nav {
+  position: fixed;
+  top: 0;
+  padding-top: 18px;
+  bottom: 0;
+  z-index: 998;
+  background: rgba(0, 0, 0, 0.9);
+  left: -260px;
+  width: 260px;
+  overflow-y: auto;
+  transition: 0.4s; }
+
+/* line 346, public/css/style.scss */
+/* line 364, public/css/style.css */
+#mobile-nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+/* line 351, public/css/style.scss */
+/* line 369, public/css/style.css */
+#mobile-nav ul li {
+  position: relative; }
+
+/* line 353, public/css/style.scss */
+/* line 372, public/css/style.css */
+#mobile-nav ul li a {
+  color: #fff;
+  font-size: 18px;
+  overflow: hidden;
+  padding: 10px 22px 10px 15px;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  outline: none; }
+
+/* line 363, public/css/style.scss */
+/* line 383, public/css/style.css */
+#mobile-nav ul li a:hover {
+  color: #fff; }
+
+/* line 368, public/css/style.scss */
+/* line 386, public/css/style.css */
+#mobile-nav ul li li {
+  padding-left: 30px; }
+
+/* line 373, public/css/style.scss */
+/* line 389, public/css/style.css */
+#mobile-nav ul .menu-has-children i {
+  position: absolute;
+  right: 0;
+  z-index: 99;
+  padding: 15px;
+  cursor: pointer;
+  color: #fff; }
+
+/* line 380, public/css/style.scss */
+/* line 397, public/css/style.css */
+#mobile-nav ul .menu-has-children i.fa-chevron-up {
+  color: #5cb85c; }
+
+/* line 385, public/css/style.scss */
+/* line 400, public/css/style.css */
+#mobile-nav ul .menu-item-active {
+  color: #5cb85c; }
+
+/* line 391, public/css/style.scss */
+/* line 404, public/css/style.css */
+#mobile-body-overly {
+  width: 100%;
+  height: 100%;
+  z-index: 997;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  display: none; }
+
+/* Mobile Nav body classes */
+/* line 404, public/css/style.scss */
+/* line 416, public/css/style.css */
+body.mobile-nav-active {
+  overflow: hidden; }
+
+/* line 407, public/css/style.scss */
+/* line 419, public/css/style.css */
+body.mobile-nav-active #mobile-nav {
+  left: 0; }
+
+/* line 411, public/css/style.scss */
+/* line 422, public/css/style.css */
+body.mobile-nav-active #mobile-nav-toggle {
+  color: #fff; }
+
+/* ==================================================
+  Features Styling
+  ================================================== */
+/* line 421, public/css/style.scss */
+/* line 429, public/css/style.css */
+.features {
+  padding-bottom: 45px; }
+
+/* line 422, public/css/style.scss */
+/* line 432, public/css/style.css */
+.features h2 {
+  color: #5cb85c; }
+
+/* line 427, public/css/style.scss */
+/* line 436, public/css/style.css */
+.feature-col {
+  display: table; }
+
+/* line 429, public/css/style.scss */
+/* line 439, public/css/style.css */
+.feature-col > div > div {
+  display: table-cell;
+  vertical-align: middle; }
+
+/* line 433, public/css/style.scss */
+/* line 443, public/css/style.css */
+.feature-col .feature-icon {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 15px;
+  background: #5cb85c;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  line-height: 70px;
+  border-radius: 50%;
+  display: inline-block; }
+
+/* ==================================================
+  Footer Styling
+  ================================================== */
+/* line 450, public/css/style.scss */
+/* line 459, public/css/style.css */
+#footer {
+  background: #343b40;
+  padding: 30px 0;
+  text-align: center; }
+
+/* line 454, public/css/style.scss */
+/* line 464, public/css/style.css */
+#footer p {
+  color: #fff;
+  margin: 0px; }
+
+/* ==================================================
+  Responsive Styling
+  ================================================== */
+@media (max-width: 61.9em) {
+  /* line 464, public/css/style.scss */
+  /* line 473, public/css/style.css */
+  section,
+  .block,
+  .cta {
+    padding: 35px 0; }
+  /* line 469, public/css/style.scss */
+  /* line 478, public/css/style.css */
+  .features {
+    padding-bottom: 5px; }
+  /*p,
+    .block p {
+        margin: 0;
+    }*/
+  /* line 476, public/css/style.scss */
+  /* line 485, public/css/style.css */
+  .hero-brand {
+    margin-bottom: 35px; }
+  /* line 479, public/css/style.scss */
+  /* line 488, public/css/style.css */
+  .tagline {
+    margin: 35px 0; }
+  /* line 482, public/css/style.scss */
+  /* line 491, public/css/style.css */
+  .tagline p {
+    font-size: 22px; }
+  /* line 485, public/css/style.scss */
+  /* line 494, public/css/style.css */
+  h1 {
+    font-size: 32px;
+    margin: 0; }
+  /* line 489, public/css/style.scss */
+  /* line 498, public/css/style.css */
+  h2 {
+    margin-bottom: 25px;
+    font-size: 24px; }
+  /* line 493, public/css/style.scss */
+  /* line 502, public/css/style.css */
+  h3 {
+    font-size: 18px; }
+  /* line 496, public/css/style.scss */
+  /* line 505, public/css/style.css */
+  .hero {
+    padding: 30px 0; }
+  /* line 499, public/css/style.scss */
+  /* line 508, public/css/style.css */
+  .stats-col {
+    margin-bottom: 25px; }
+  /* line 502, public/css/style.scss */
+  /* line 511, public/css/style.css */
+  .block {
+    height: auto; }
+  /* line 505, public/css/style.scss */
+  /* line 514, public/css/style.css */
+  .feature-col {
+    padding-bottom: 30px; } }
+
+@media (max-width: 768px) {
+  /* line 510, public/css/style.scss */
+  /* line 519, public/css/style.css */
+  .block {
+    padding-left: 30px;
+    padding-right: 30px; } }
+
+/* ==================================================
+  Agile Testing Section
+  ================================================== */
+/* line 521, public/css/style.scss */
+/* line 527, public/css/style.css */
+section#agile-testing {
+  background: #f7f7f7; }
+
+/* line 524, public/css/style.scss */
+/* line 530, public/css/style.css */
+section#agile-testing #agile-testing-definition {
+  margin-bottom: 30px; }
+
+/* line 527, public/css/style.scss */
+/* line 533, public/css/style.css */
+section#agile-testing #agile-testing-definition p {
+  font-size: 1.25rem; }
+
+/* line 532, public/css/style.scss */
+/* line 536, public/css/style.css */
+section#agile-testing .card {
+  background-color: #f7f7f7; }
+
+/* line 536, public/css/style.scss */
+/* line 539, public/css/style.css */
+section#agile-testing .fa {
+  padding-left: 3px; }
+
+@media (max-width: 992px) {
+  /* line 544, public/css/style.scss */
+  /* line 544, public/css/style.css */
+  section#agile-testing #agile-testing-definition {
+    margin-bottom: 15px; }
+  /* line 547, public/css/style.scss */
+  /* line 547, public/css/style.css */
+  section#agile-testing #agile-testing-definition p {
+    font-size: 18px; } }
+
+/* ==================================================
+  All Forms
+  ================================================== */
+/* line 560, public/css/style.scss */
+/* line 554, public/css/style.css */
+.form .error {
+  color: #a94442;
+  display: none;
+  font-weight: 400;
+  font-size: 13px; }
+
+/* line 567, public/css/style.scss */
+/* line 561, public/css/style.css */
+.form input, .form textarea, .form select {
+  border-radius: .25rem;
+  box-shadow: none; }
+
+/* line 572, public/css/style.scss */
+/* line 566, public/css/style.css */
+.form button {
+  background: #5cb85c;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  cursor: pointer;
+  /*&:hover {
+      background: lighten($color-primary, 10%);
+    }*/ }
+
+/* line 585, public/css/style.scss */
+/* line 578, public/css/style.css */
+.form button.secondary-button {
+  background: #495957; }
+
+/* line 589, public/css/style.scss */
+/* line 582, public/css/style.css */
+.form .has-error .form-control {
+  border-color: #a94442; }
+
+/* ==================================================
+  Assessment Start Section
+  ================================================== */
+/* line 598, public/css/style.scss */
+/* line 589, public/css/style.css */
+#assessment-start {
+  background: #f7f7f7; }
+
+/* line 601, public/css/style.scss */
+/* line 592, public/css/style.css */
+#assessment-start label {
+  color: #5cb85c; }
+
+/* line 605, public/css/style.scss */
+/* line 595, public/css/style.css */
+#assessment-start h2 {
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  color: #5cb85c; }
+
+/* line 610, public/css/style.scss */
+/* line 599, public/css/style.css */
+#assessment-start .social i {
+  font-size: 30px;
+  color: #5cb85c; }
+
+/* line 615, public/css/style.scss */
+/* line 603, public/css/style.css */
+#assessment-start .list i {
+  font-size: 25px;
+  color: #5cb85c;
+  float: left; }
+
+/* line 621, public/css/style.scss */
+/* line 608, public/css/style.css */
+#assessment-start .list p {
+  padding: 0 0 10px 35px;
+  line-height: 24px; }
+
+/* ==================================================
+  Assessments Steps
+  ================================================== */
+/* https://bootsnipp.com/snippets/featured/form-process-steps8 */
+/* line 632, public/css/style.scss */
+/* line 617, public/css/style.css */
+.bs-wizard {
+  border-bottom: solid 1px #ddd !important;
+  padding: 0 0 10px 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+
+/* line 640, public/css/style.scss */
+/* line 626, public/css/style.css */
+.bs-wizard > .bs-wizard-step {
+  padding: 0;
+  position: relative; }
+
+/* line 644, public/css/style.scss */
+/* line 631, public/css/style.css */
+.bs-wizard > .bs-wizard-step .bs-wizard-stepnum {
+  font-size: 18px;
+  margin-bottom: 5px; }
+
+/* line 647, public/css/style.scss */
+/* line 636, public/css/style.css */
+.bs-wizard > .bs-wizard-step .bs-wizard-info {
+  color: #495957;
+  font-size: 14px; }
+
+/* line 648, public/css/style.scss */
+/* line 641, public/css/style.css */
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  display: block;
+  background: #f7f7f7;
+  top: 45px;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -15px;
+  border-radius: 50%; }
+
+/* line 649, public/css/style.scss */
+/* line 654, public/css/style.css */
+.bs-wizard > .bs-wizard-step > .progress {
+  position: relative;
+  border-radius: 0px;
+  height: 8px;
+  box-shadow: none;
+  margin: 20px 0; }
+
+/* line 650, public/css/style.scss */
+/* line 662, public/css/style.css */
+.bs-wizard > .bs-wizard-step > .progress > .progress-bar {
+  width: 0px;
+  box-shadow: none;
+  background: #f7f7f7; }
+
+/* line 651, public/css/style.scss */
+/* line 668, public/css/style.css */
+.bs-wizard > .bs-wizard-step.complete > .bs-wizard-dot:after {
+  content: ' ';
+  width: 14px;
+  height: 14px;
+  background: #5cb85c;
+  border-radius: 50px;
+  position: absolute;
+  top: 8px;
+  left: 8px; }
+
+/* line 652, public/css/style.scss */
+/* line 679, public/css/style.css */
+.bs-wizard > .bs-wizard-step.complete .bs-wizard-info {
+  color: #5cb85c; }
+
+/* line 653, public/css/style.scss */
+/* line 683, public/css/style.css */
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot {
+  background-color: #f7f7f7; }
+
+/* line 654, public/css/style.scss */
+/* line 687, public/css/style.css */
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot:after {
+  opacity: 0; }
+
+/* line 655, public/css/style.scss */
+/* line 691, public/css/style.css */
+.bs-wizard > .bs-wizard-step:first-child > .progress {
+  left: 50%;
+  width: 50%; }
+
+/* line 656, public/css/style.scss */
+/* line 696, public/css/style.css */
+.bs-wizard > .bs-wizard-step:last-child > .progress {
+  width: 50%; }
+
+/* line 657, public/css/style.scss */
+/* line 700, public/css/style.css */
+.bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot {
+  pointer-events: none; }
+
+/* line 659, public/css/style.scss */
+/* line 704, public/css/style.css */
+.progress {
+  background-color: #f7f7f7; }
+
+/* ==================================================
+Assessments Questions
+================================================== */
+/* line 667, public/css/style.scss */
+/* line 711, public/css/style.css */
+section.assessment-questions {
+  padding: 25px 0; }
+
+/* line 670, public/css/style.scss */
+/* line 714, public/css/style.css */
+section.assessment-questions h2 {
+  margin-bottom: 25px; }
+
+/* line 674, public/css/style.scss */
+/* line 717, public/css/style.css */
+section.assessment-questions select {
+  width: 100%; }
+
+/* line 678, public/css/style.scss */
+/* line 720, public/css/style.css */
+section.assessment-questions .questions {
+  padding-top: 25px; }
+
+/* ==================================================
+Assessments Results
+================================================== */
+/* line 687, public/css/style.scss */
+/* line 727, public/css/style.css */
+#tab-navigation {
+  margin-bottom: 20px; }
+
+/* line 690, public/css/style.scss */
+/* line 730, public/css/style.css */
+#tab-navigation .nav-item {
+  text-align: center; }
+
+/* line 694, public/css/style.scss */
+/* line 733, public/css/style.css */
+#tab-navigation .nav-link {
+  color: #5cb85c;
+  height: 100%;
+  padding: .5rem .5rem; }
+
+/* line 698, public/css/style.scss */
+/* line 738, public/css/style.css */
+#tab-navigation .nav-link:hover {
+  color: #5cb85c; }
+
+/* line 701, public/css/style.scss */
+/* line 741, public/css/style.css */
+#tab-navigation .nav-link.active {
+  color: #495957; }
+
+@media (max-width: 768px) {
+  /* line 708, public/css/style.scss */
+  /* line 746, public/css/style.css */
+  #tab-navigation .nav-item {
+    width: 170px; } }
+
+@media (max-width: 576px) {
+  /* line 715, public/css/style.scss */
+  /* line 751, public/css/style.css */
+  #tab-navigation .nav-item {
+    width: 110px;
+    font-size: 13px; } }
+
+/* line 723, public/css/style.scss */
+/* line 756, public/css/style.css */
+section.assessment-results {
+  padding: 20px 0; }
+
+/* line 726, public/css/style.scss */
+/* line 759, public/css/style.css */
+section.assessment-results h2 {
+  margin-bottom: 25px; }
+
+/* line 730, public/css/style.scss */
+/* line 762, public/css/style.css */
+section.assessment-results select {
+  width: 100%; }
+
+/* line 734, public/css/style.scss */
+/* line 765, public/css/style.css */
+section.assessment-results .questions {
+  padding-top: 20px; }
+
+/* ==================================================
+Share Assessment Footer
+================================================== */
+/* line 744, public/css/style.scss */
+/* line 772, public/css/style.css */
+footer.share-footer {
+  background-color: #f7f7f7;
+  padding: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%; }
+
+/* line 751, public/css/style.scss */
+/* line 779, public/css/style.css */
+footer.share-footer .social {
+  display: flex; }
+
+/* line 754, public/css/style.scss */
+/* line 782, public/css/style.css */
+footer.share-footer .social .share-text {
+  font-size: 26px;
+  padding: 15px 0;
+  margin: 0px;
+  text-align: center;
+  float: right; }
+
+/* line 762, public/css/style.scss */
+/* line 789, public/css/style.css */
+footer.share-footer .social #share-links {
+  display: flex;
+  padding-top: 15px;
+  padding-left: 0px;
+  list-style: none;
+  float: left; }
+
+/* line 769, public/css/style.scss */
+/* line 796, public/css/style.css */
+footer.share-footer .social #share-links .jssocials-share {
+  float: left;
+  padding: 0px 10px;
+  margin-bottom: 0; }
+
+/* line 774, public/css/style.scss */
+/* line 801, public/css/style.css */
+footer.share-footer .social #share-links .jssocials-share .jssocials-share-link {
+  font-size: 18px;
+  display: inline-block;
+  background: #464a4e;
+  color: #fff;
+  line-height: 1;
+  padding: 8.5px 0;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s; }
+
+/* line 788, public/css/style.scss */
+/* line 814, public/css/style.css */
+footer.share-footer .social #share-links .jssocials-share .jssocials-share-link:hover {
+  background: #5cb85c;
+  color: #fff; }
+
+@media (max-width: 768px) {
+  /* line 800, public/css/style.scss */
+  /* line 820, public/css/style.css */
+  footer.share-footer .social .share-text {
+    float: none; }
+  /* line 803, public/css/style.scss */
+  /* line 823, public/css/style.css */
+  footer.share-footer .social #share-links {
+    padding-top: 0px;
+    float: none; } }
+
+@media (max-width: 576px) {
+  /* line 814, public/css/style.scss */
+  /* line 829, public/css/style.css */
+  footer.share-footer .social .share-text {
+    font-size: 20px; }
+  /* line 819, public/css/style.scss */
+  /* line 832, public/css/style.css */
+  footer.share-footer .social #share-links .jssocials-share .jssocials-share-link {
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+    padding: 5.5px 0; } }

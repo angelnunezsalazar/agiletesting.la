@@ -1,0 +1,829 @@
+
+/*
+    Theme Name: Bell
+    Theme URL: https://bootstrapmade.com/bell-free-bootstrap-4-template/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+*/
+
+@import '_variables';
+@import '_mixins';
+
+/* ==================================================
+  General
+  ================================================== */
+a {
+  transition: 0.5s;
+}
+
+/* ==================================================
+  Elements
+  ================================================== */
+
+.btn {
+    background-color: $color-primary;
+    font-family: $font-secondary;
+    color: #fff;
+    padding: 15px 45px;
+    border-radius: 50px;
+    &:hover {
+        background-color: #fff;
+        color: $color-primary;
+    }
+
+}
+.btn-ghost {
+    border: 3px solid #fff;
+    background-color: transparent;
+    &:hover {
+        background-color: #fff;
+        color: $color-primary;
+    }
+}
+section {
+    padding: 85px 0;
+}
+.card {
+    position: relative;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+    overflow: hidden;
+}
+a:hover {
+    text-decoration: none !important;
+}
+.scrolltop {
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: $color-primary;
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    &:hover, &:active, &:focus {
+        color: #fff !important;
+        opacity: .75;
+    }
+}
+
+/* ==================================================
+  Hero Styling
+================================================== */
+
+.hero {
+    display: table;
+    position: relative;
+    background-image: url(../img/agile-testing-manifesto.png);
+    background-position: center;
+    background-size: cover;
+    padding: 150px 0;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    &:after {
+        content: '';
+        z-index: 0;
+        position: absolute;
+        background: rgba(0, 0, 0, .65);
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
+    .container {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+    }
+}
+
+.hero-brand {
+    margin-bottom: 75px;
+    display: inline-block;
+    &:hover {
+        opacity: .75;
+    }
+}
+
+.tagline {
+    margin: 45px 0 75px 0;
+}
+
+.tagline p{
+    font-family: $font-primary;
+    font-size: $font-size-medium;
+    margin-bottom: 45px;
+    color: #fff;
+}
+
+/* ==================================================
+  Header Styling
+================================================== */
+#header {
+  background: $color-primary;
+  height: 70px;
+  
+  #logo {
+    margin: 14px 25px 0 0; 
+    h1 {
+      font-size: 36px;
+      margin: 0;
+      padding: 2px 0;
+      line-height: 1;
+      font-family: $font-primary;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    
+    h1 a, h1 a:hover {
+      color: #fff;
+    }
+    
+    img {
+      padding: 0;
+      margin: 0;
+      max-height: 40px;
+    }
+  }
+  @media (max-width: 768px) {
+    height: 50px;
+    #logo {
+      margin: 10px 0 0 0; 
+      h1 {
+        padding: 2px 0;
+        font-size: 26px;
+      }
+      
+      img { 
+        max-height: 30px;
+      }
+    }
+  }
+  
+  .social-nav {
+    margin-top: 15px;
+    a {
+      font-size: 24px;
+      margin-left: 15px;
+      color: #fff;
+      &:hover {
+        color: rgba(255, 255, 255, .75);
+      }
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+
+/* Nav Menu Essentials */
+.nav-menu {
+  ,* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+    
+  ul {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    z-index: 99;
+  }
+    
+  li {
+    position: relative;
+    white-space: nowrap;
+  }
+    
+  > li {
+    float: left;
+  }
+    
+  li:hover > ul,
+  li.sfHover > ul {
+    display: block;
+  }
+    
+  ul ul {
+    top: 0;
+    left: 100%;
+  }
+    
+  ul li {
+    min-width: 180px;
+  }
+}
+
+/* Nav Menu Arrows */
+.sf-arrows {
+  .sf-with-ul {
+    padding-right: 30px;
+  }
+    
+  .sf-with-ul:after {
+    content: "\f107";
+    position: absolute;
+    right: 15px;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+  }
+    
+  ul .sf-with-ul:after {
+    content: "\f105";
+  }
+}
+
+/* Nav Meu Container */
+#nav-menu-container {
+  margin: 0;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+/* Nav Meu Styling */
+.nav-menu {
+  a {
+    padding: 22px 15px 18px 15px;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    font-family: $font-secondary;
+    font-weight: 300;   
+    font-size: 15px;
+    outline: none;
+  }
+    
+  a:hover, li:hover > a, .menu-active > a  {
+    color: rgba(255, 255, 255, .75);
+  }
+    
+  ul {
+    margin: 4px 0 0 15px;
+    box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.08);
+      
+    li {
+      background: #fff;
+      border-top:  1px solid #f4f4f4;
+      &:first-child {
+        border-top: 0;
+      }
+      
+      &:hover {
+        background: $color-primary;
+        transition: 0.3s;
+      }
+      a {
+        color: #333;
+        transition: none;
+        padding: 10px 15px;
+        &:hover {
+          color: #fff;
+        }
+
+      }
+
+    }
+    
+    ul {
+      margin: 0;
+    }
+  }
+}
+
+/* Mobile Nav Toggle */
+#mobile-nav-toggle {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  margin: 8px 10px 0 0;
+  border: 0;
+  background: none;
+  font-size: 24px;
+  display: none;
+  transition: all 0.4s;
+  outline: none;
+  cursor: pointer;
+  
+  i {
+    color: #fff;
+  }
+    
+  @media (max-width: 768px) {
+    display: inline; 
+  }
+    
+}
+
+/* Mobile Nav Styling */
+#mobile-nav {
+  position: fixed;
+  top: 0;
+  padding-top: 18px;
+  bottom: 0;
+  z-index: 998;
+  background: rgba(0, 0, 0, 0.9); 
+  left: -260px;
+  width: 260px;
+  overflow-y: auto;
+  transition: 0.4s;
+    
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    
+    li {
+      position: relative;
+      a {
+        color: #fff;
+        font-size: $font-size-paragraph;
+        overflow: hidden;
+        padding: 10px 22px 10px 15px;
+        position: relative;
+        text-decoration: none;
+        width: 100%;
+        display: block;
+        outline: none;
+        &:hover {
+          color: #fff;
+        }
+      }
+      
+      li {
+        padding-left: 30px;
+      }
+    }
+    
+    .menu-has-children i {
+      position: absolute;
+      right: 0;
+      z-index: 99;
+      padding: 15px;
+      cursor: pointer;
+      color: #fff;
+      &.fa-chevron-up {
+        color: $color-primary;
+      }
+    }
+    
+    .menu-item-active {
+      color: $color-primary;
+    }
+  }
+}
+
+#mobile-body-overly {
+  width:100%; 
+  height:100%; 
+  z-index:997;
+  top:0; 
+  left:0; 
+  position:fixed; 
+  background: rgba(0, 0, 0, 0.6); 
+  display: none;
+}
+
+/* Mobile Nav body classes */
+body {
+  &.mobile-nav-active {
+    overflow: hidden;
+    
+    #mobile-nav {
+      left: 0;
+    }
+    
+    #mobile-nav-toggle {
+      color: #fff;
+    }
+  }
+}
+
+/* ==================================================
+  Features Styling
+  ================================================== */
+
+.features {
+    h2 {
+        color: $color-primary;
+    }
+    padding-bottom: 45px;
+}
+.feature-col {
+    display: table;
+    > div > div {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .feature-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 15px;
+        background: $color-primary;
+        color: #fff;
+        font-size: 24px;
+        text-align: center;
+        line-height: 70px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+}
+
+/* ==================================================
+  Footer Styling
+  ================================================== */
+#footer {
+  background: #343b40;
+  padding: 30px 0;
+  text-align: center;
+  p{
+    color: #fff;
+    margin: 0px;
+  }
+}
+/* ==================================================
+  Responsive Styling
+  ================================================== */
+
+@media (max-width: 61.9em) {
+    section,
+    .block,
+    .cta {
+        padding: 35px 0;
+    }
+    .features {
+        padding-bottom: 5px;
+    }
+    /*p,
+    .block p {
+        margin: 0;
+    }*/
+    .hero-brand {
+        margin-bottom: 35px;
+    }
+    .tagline {
+        margin: 35px 0;
+    }
+    .tagline p {
+      font-size: 22px;
+    }
+    h1 {
+        font-size: 32px;
+        margin: 0;
+    }
+    h2 {
+        margin-bottom: 25px;
+        font-size: 24px;
+    }
+    h3 {
+        font-size: 18px;
+    }
+    .hero {
+        padding: 30px 0;
+    }
+    .stats-col {
+        margin-bottom: 25px;
+    }
+    .block {
+        height: auto;
+    }
+    .feature-col {
+        padding-bottom: 30px;
+    }
+}
+@media (max-width: 768px) {
+    .block {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+
+/* ==================================================
+  Agile Testing Section
+  ================================================== */
+
+section#agile-testing {
+  background: #f7f7f7;
+
+  #agile-testing-definition{
+    margin-bottom: 30px;
+
+    p{
+      font-size: 1.25rem;
+    }
+  }
+
+  .card{
+    background-color: #f7f7f7;
+  }
+
+  .fa{ //fix: ícono de institución no está bien cortado
+    padding-left: 3px;
+  }
+} 
+
+@media (max-width: 992px) {
+  section#agile-testing {
+  
+    #agile-testing-definition{
+      margin-bottom: 15px;
+
+      p {
+        font-size: $font-size-paragraph;
+      }
+    }
+  }
+}
+
+/* ==================================================
+  All Forms
+  ================================================== */
+
+.form {
+
+  .error {
+    color: $color-error;
+    display:none;
+    font-weight:400;
+    font-size:13px;
+  }
+
+  input, textarea, select{
+    border-radius: .25rem;
+    box-shadow: none;
+  }
+  
+  button {
+    background: $color-primary;
+    border: 0;
+    padding: 10px 24px;
+    color: #fff;
+    transition: 0.4s;
+    cursor:pointer;
+
+    /*&:hover {
+      background: lighten($color-primary, 10%);
+    }*/
+  }
+
+  button.secondary-button{
+    background: $color-paragraph;
+  }
+
+  .has-error .form-control{
+    border-color: $color-error;
+  }
+
+}
+
+/* ==================================================
+  Assessment Start Section
+  ================================================== */
+#assessment-start {
+    background: #f7f7f7;
+    
+    label {
+      color: $color-primary;
+    }
+
+    h2 {
+      font-family: $font-primary;
+      color: $color-primary;
+    }
+
+    .social i{
+        font-size: 30px;
+        color: $color-primary;
+    }
+
+    .list i {
+        font-size: 25px;
+        color: $color-primary;
+        float: left;
+    }
+
+    .list p {
+        padding: 0 0 10px 35px;
+        line-height: 24px;
+    }
+}
+
+/* ==================================================
+  Assessments Steps
+  ================================================== */
+
+/* https://bootsnipp.com/snippets/featured/form-process-steps8 */
+.bs-wizard {
+  border-bottom: solid 1px #ddd !important; padding: 0 0 10px 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.bs-wizard > .bs-wizard-step {
+  padding: 0; position: relative;
+}
+
+.bs-wizard > .bs-wizard-step .bs-wizard-stepnum {
+  font-size: $font-size-paragraph; margin-bottom: 5px;
+}
+.bs-wizard > .bs-wizard-step .bs-wizard-info {color: $color-paragraph; font-size: 14px;}
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot {position: absolute; width: 30px; height: 30px; display: block; background: $background-color-highlight; top: 45px; left: 50%; margin-top: -15px; margin-left: -15px; border-radius: 50%;} 
+.bs-wizard > .bs-wizard-step > .progress {position: relative; border-radius: 0px; height: 8px; box-shadow: none; margin: 20px 0;}
+.bs-wizard > .bs-wizard-step > .progress > .progress-bar {width:0px; box-shadow: none; background: $background-color-highlight;}
+.bs-wizard > .bs-wizard-step.complete > .bs-wizard-dot:after {content: ' '; width: 14px; height: 14px; background: $color-primary; border-radius: 50px; position: absolute; top: 8px; left: 8px; }
+.bs-wizard > .bs-wizard-step.complete .bs-wizard-info {color: $color-primary;}
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot {background-color: $background-color-highlight;}
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot:after {opacity: 0;}
+.bs-wizard > .bs-wizard-step:first-child  > .progress {left: 50%; width: 50%;}
+.bs-wizard > .bs-wizard-step:last-child  > .progress {width: 50%;}
+.bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot{ pointer-events: none; }
+
+.progress{
+  background-color: $background-color-highlight;
+}
+
+/* ==================================================
+Assessments Questions
+================================================== */
+
+section.assessment-questions {
+    padding: 25px 0;
+    
+    h2{
+      margin-bottom: 25px;
+    }
+
+    select {
+      width: 100%;
+    }
+
+    .questions{
+      padding-top:25px;
+    }
+}
+
+/* ==================================================
+Assessments Results
+================================================== */
+
+#tab-navigation{
+  margin-bottom: 20px;
+
+  .nav-item{
+    text-align: center;
+  }
+
+  .nav-link {
+    color: $color-primary;
+    height: 100%;
+    padding: .5rem .5rem;
+    &:hover {
+      color: $color-primary;
+    }
+    &.active{
+      color: $color-paragraph;
+    }
+  }
+}
+
+@media (max-width: 768px){
+  #tab-navigation .nav-item {
+      width: 170px;
+  }
+}
+
+@media (max-width: 576px) {
+  #tab-navigation{
+    .nav-item{
+      width: 110px;
+      font-size: 13px;
+    }
+  }
+}
+
+
+section.assessment-results {
+  padding: 20px 0;
+  
+  h2{
+    margin-bottom: 25px;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  .questions{
+    padding-top:20px;
+  }
+}
+
+
+/* ==================================================
+Share Assessment Footer
+================================================== */
+
+footer.share-footer {
+  background-color: $background-color-highlight;
+  padding:0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  .social {
+    display: flex;
+  
+    .share-text{
+      font-size: $font-size-medium;
+      padding: 15px 0;
+      margin:0px;
+      text-align: center;
+      float: right;
+    }
+  
+    #share-links{
+      display: flex;
+      padding-top: 15px;
+      padding-left:0px;
+      list-style: none;
+      float: left;
+  
+      .jssocials-share{
+        float: left;
+        padding: 0px 10px;
+        margin-bottom: 0;
+  
+        .jssocials-share-link {
+          font-size: 18px;
+          display: inline-block;
+          background: $color-paragraph-bold;
+          color: #fff;
+          line-height: 1;
+          padding: 8.5px 0;
+          border-radius: 50%;
+          text-align: center;
+          width: 36px;
+          height: 36px;
+          transition: 0.3s;
+        }
+  
+        .jssocials-share-link:hover {
+          background: $color-primary;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  footer.share-footer {
+    .social{
+      .share-text{
+        float: none;
+      }
+      #share-links{
+        padding-top: 0px;
+        float: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  footer.share-footer {
+    .social{
+      .share-text{
+        font-size: 20px;
+      }
+      #share-links{
+        .jssocials-share{
+          .jssocials-share-link {
+            font-size: 16px;
+            width: 30px;
+            height: 30px;
+            padding: 5.5px 0;
+          }
+        }
+      }
+    }
+  }
+}
