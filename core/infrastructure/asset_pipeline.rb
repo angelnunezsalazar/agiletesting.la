@@ -7,6 +7,7 @@ module AssetPipeline extend self
     app.set :assets, assets = Sprockets::Environment.new(app.settings.root)
     app.set :assets_path, -> { File.join(public_folder, "assets") }
     app.set :assets_precompile, %w(*.js *.css)
+    app.set :manifest, "manifest-7f5cb74af5d7f4b82200738fdbdc5a45.json"
     assets.gzip = false
 
     # assets.append_path('assets/fonts')
@@ -35,7 +36,7 @@ module AssetPipeline extend self
       config.debug       = true if app.development?
       if app.production?
         config.digest      = true
-        config.manifest    = Sprockets::Manifest.new(assets, File.join(app.assets_path, "manifest.json"))
+        config.manifest    = Sprockets::Manifest.new(assets, File.join(app.assets_path, app.manifest))
       end
     end
 
