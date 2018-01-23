@@ -25,17 +25,12 @@
   <!-- Favicon -->
   <link href="img/favicon.ico" rel="icon">
 
-  <!-- Google Fonts -->
-  <link href="/lib/font-google/font-google-raleway-roboto.css" rel="stylesheet">
+  <!-- Required CSS Files -->
+  <link href="/vendor/font-google/font-google-raleway-roboto.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
-  <!-- Bootstrap CSS File -->
-  <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Libraries CSS Files -->
-  <link href="/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-  <!-- Main Stylesheet File -->
-  <link href="/css/style.css" rel="stylesheet">
+  <%= stylesheet_tag 'style' %>
 
 </head>
 
@@ -305,30 +300,10 @@
   <a class="scrolltop" href="#"><span class="fa fa-angle-up"></span></a>
 
   <!-- Required JavaScript Libraries -->
-  <script src="/lib/jquery/jquery.min.js"></script>
-  <script src="/lib/easing/easing.js"></script>
-  <script src="/lib/jquery-validation/jquery.validate.min.js"></script>
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/easing/easing.js"></script>
+  <script src="/vendor/jquery-validation/jquery.validate.min.js"></script>
 
-  <!-- Custom Javascript File -->
-  <script src="/js/assessment-home.js"></script>
-
-  <script type="text/javascript">
-		$(document).ready( function () {
-			$("#assessment-form" ).validate( {
-				errorElement: "small",
-				errorPlacement: function ( error, element ) {
-					error.addClass( "form-text" );
-					error.insertAfter( element );
-				},
-				highlight: function ( element, errorClass, validClass ) {
-					$( element ).parents( ".form-group" ).addClass( "has-error" ).removeClass( "has-success" );
-				},
-				unhighlight: function (element, errorClass, validClass) {
-					$( element ).parents( ".form-group" ).addClass( "has-success" ).removeClass( "has-error" );
-				}
-			});
-
-		});
-	</script>
+  <script src="<%= javascript_path 'assessment-home' %>"></script>
 </body>
 </html>

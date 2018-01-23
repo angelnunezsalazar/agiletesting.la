@@ -7,6 +7,11 @@ gem "sinatra-flash"
 gem 'json'
 gem "activerecord"
 gem 'rake'
+gem 'sprockets'
+gem 'sprockets-helpers'
+gem 'closure-compiler'
+gem 'yui-compressor'
+gem 'sass'
 
 group :development do
     gem 'sqlite3'

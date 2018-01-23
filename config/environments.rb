@@ -1,9 +1,9 @@
-configure :development do
+configure :production do
  set :database, 'sqlite3:db/development.sqlite3'
  set :show_exceptions, true
 end
 
-configure :production do
+configure :development do
  db = URI.parse(ENV['DATABASE_URL'] || 'postgres:///localhost/mydb')
 
  ActiveRecord::Base.establish_connection(

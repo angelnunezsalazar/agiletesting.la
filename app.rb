@@ -2,16 +2,17 @@ require 'sinatra'
 require "sinatra/content_for"
 require 'sinatra/flash'
 require 'sinatra/activerecord'
+require 'json'
+require './core/infrastructure/asset_pipeline'
 require './config/environments'
 Dir[File.join(File.dirname(__FILE__), 'core/model', '*.rb')].each {|file| require file }
 Dir[File.join(File.dirname(__FILE__), 'core/handlers', '*.rb')].each {|file| require file }
-
-require 'json'
 
 set :public_folder, 'public'
 set :views, File.dirname(__FILE__) + "/views"
 enable :sessions
 Tilt.register Tilt::ERBTemplate, 'html'
+register AssetPipeline
 
 get '/' do
 	redirect '/assessment'
