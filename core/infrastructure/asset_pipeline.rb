@@ -15,13 +15,13 @@ module AssetPipeline extend self
     # assets.append_path('assets/images')
     # assets.append_path('vendor/assets/javascripts')
 
-    # app.configure :development do
-    #   #assets.cache = Sprockets::Cache::FileStore.new('./tmp')
-    #   app.get '/assets/*' do
-    #     env['PATH_INFO'].sub!(%r{^/assets}, '')
-    #     settings.assets.call(env)
-    #   end
-    # end
+    app.configure :development do
+      assets.cache = Sprockets::Cache::FileStore.new('./tmp')
+      app.get '/assets/*' do
+        env['PATH_INFO'].sub!(%r{^/assets}, '')
+        settings.assets.call(env)
+      end
+    end
 
     app.configure :production do
       assets.js_compressor  = Closure::Compiler.new

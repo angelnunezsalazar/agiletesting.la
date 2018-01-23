@@ -3,18 +3,24 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Agile Testing Assessment</title>
+  <title>Agile Testing Assessment - Results</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
-  <meta content="" name="description">
+  <meta content="Agile Testing Assessment - Results" name="description">
 
   <!-- Favicon -->
   <link href="img/favicon.ico" rel="icon">
 
   <!-- Required CSS Files -->
-  <link href="/vendor/font-google/font-google-raleway-roboto.css" rel="stylesheet">
-  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <% if settings.production? %>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,900" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <% else %>
+    <link href="/vendor/font-google/font-google-raleway-roboto.css" rel="stylesheet">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <% end %>
 
   <%= stylesheet_tag 'style' %>
 
@@ -68,11 +74,18 @@
     </div>
   </footer>
 
-  <!-- Include jQuery -->
-  <script src="/vendor/jquery/jquery.min.js"></script>
-  <script src="https://code.highcharts.com/highcharts.js"></script>
-  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/vendor/jssocials/jssocials.min.js"></script>
+  <% if settings.production? %>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSocials/1.4.0/jssocials.min.js"></script>
+  <% else %>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/highcharts/highcharts.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/jssocials/jssocials.min.js"></script>
+  <% end %>
+
 
   <script src="<%= javascript_path 'assessment-results' %>"></script>
 </body>
