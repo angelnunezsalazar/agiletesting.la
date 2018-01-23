@@ -37,7 +37,7 @@ GEM
     mustermann (1.0.1)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
-    pg (1.0.0)
+    pg (0.21.0)
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
@@ -116,7 +116,7 @@ DEPENDENCIES
   chromedriver-helper
   closure-compiler
   json
-  pg
+  pg (~> 0.20)
   rack-test
   rails_12factor
   rake

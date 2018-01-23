@@ -10,7 +10,6 @@ Social
 
 Data
 - Cargar Datos de los Assessments
-- Prueba Automatizada
 
 NEXT
 ==========
