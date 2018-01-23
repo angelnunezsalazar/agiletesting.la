@@ -315,5 +315,17 @@
   <script src="/vendor/easing/easing.min.js"></script>
 
   <script src="<%= javascript_path 'assessment-home' %>"></script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-11277405-2"></script>
+  <script>
+    var host = window.location.hostname;
+    if(host != "localhost")
+    {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-11277405-2');
+    }
+  </script>
 </body>
 </html>
