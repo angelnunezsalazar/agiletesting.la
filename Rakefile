@@ -7,7 +7,7 @@ namespace :assets do
   desc 'Precompile assets'
   task :precompile do
     environment = Sinatra::Application.assets
-    manifest = Sprockets::Manifest.new(environment.index, File.join(Sinatra::Application.assets_path, "manifesto.json"))
+    manifest = Sprockets::Manifest.new(environment.index, File.join(Sinatra::Application.assets_path, "manifest.json"))
     manifest.compile(Sinatra::Application.assets_precompile)
   end
 
