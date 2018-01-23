@@ -1,5 +1,5 @@
 require 'sprockets-helpers'
-require 'closure-compiler'
+require 'uglifier'
 require 'yui/compressor'
 
 module AssetPipeline extend self
@@ -25,7 +25,7 @@ module AssetPipeline extend self
     end
 
     app.configure :production do
-      assets.js_compressor  = Closure::Compiler.new
+      assets.js_compressor  = Uglifier.new(mangle: true)
       assets.css_compressor = YUI::CssCompressor.new
       app.use Rack::Deflater
     end

@@ -9,7 +9,7 @@ gem "activerecord"
 gem 'rake'
 gem 'sprockets'
 gem 'sprockets-helpers'
-gem 'closure-compiler'
+gem 'uglifier'
 gem 'yui-compressor'
 gem 'sass'
 
