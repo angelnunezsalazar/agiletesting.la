@@ -11,7 +11,7 @@ describe 'Finish Controller' do
 
 	it 'redirecciona a los resultados si el assessment se proceso correctamente' do
         assessment=stub_model Assessment, :email => 'email@email.com'
-        allow_any_instance_of(FinishAssessmentHandler).to receive(:handle).and_return(assessment)
+        allow_any_instance_of(FinishAssessmentHandler).to receive(:execute).and_return(assessment)
 
         post "/assessment-finish", 
             :assessment_id => 1,

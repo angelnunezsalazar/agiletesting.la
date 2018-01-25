@@ -23,12 +23,8 @@ get '/assessment' do
 end
 
 post '/assessment-start' do
-	assessment=Assessment.create(
-		email: params[:email],
-		country: params[:country],
-		company: params[:company],
-		completed: false
-	)
+	create_assessment_draft=CreateAssessmentDraftHandler.new
+	assessment=create_assessment_draft.execute(params[:email],params[:country],params[:company])
 	redirect "/assessment-questions/#{assessment.id}-#{assessment.email}"
 end
 
@@ -50,7 +46,7 @@ post '/assessment-finish' do
 			question_value
 		end
 		finish_assessment_handler=FinishAssessmentHandler.new
-		assessment=finish_assessment_handler.handle(assessment_id,answers_param)
+		assessment=finish_assessment_handler.execute(assessment_id,answers_param)
 		redirect "/assessment-results/#{assessment.id}-#{assessment.email}"
 	end
 end
@@ -71,4 +67,16 @@ end
 get '/api/questions' do
 	questions = Question.where(pillar: params[:pillar])
 	return questions.to_json;
+end
+
+post '/api/assessment' do
+	payload = JSON.parse(request.body.read)
+	Assessment.transaction do
+		create_assessment_draft=CreateAssessmentDraftHandler.new
+		assessment=create_assessment_draft.execute(payload[:email],payload[:country],payload[:company])
+		finish_assessment=FinishAssessmentHandler.new
+		assessment=finish_assessment.execute(assessment.id,payload[:answers])		
+	end
+	return { :message => "Assessment Created",
+			 :assessment => assessment }.to_json
 end

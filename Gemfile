@@ -11,6 +11,7 @@ gem 'sprockets'
 gem 'sprockets-helpers'
 gem 'uglifier'
 gem 'sass'
+gem 'httparty'
 
 group :development do
     gem 'sqlite3'

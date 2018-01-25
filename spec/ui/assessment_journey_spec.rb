@@ -1,6 +1,6 @@
 require "selenium-webdriver"
 
-describe "User in the Assessment Journey" do
+describe "User in the Assessment Journey", type: 'ui' do
     
     driver = nil
     root_url = "http://localhost:9292"

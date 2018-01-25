@@ -22,6 +22,7 @@ a {
 
 .btn {
     background-color: $color-primary;
+    border: 3px solid $color-primary;
     font-family: $font-secondary;
     color: #fff;
     padding: 15px 45px;
@@ -415,22 +416,26 @@ body {
 }
 
 /* ==================================================
-  Features Styling
+  Cards Styling
   ================================================== */
 
-.features {
-    h2 {
-        color: $color-primary;
-    }
-    padding-bottom: 45px;
+.card-container{
+  margin-bottom: 45px;
+
+  @media (min-width: 768px){
+    margin-bottom: 30px;
+  }
 }
-.feature-col {
+
+.card-col {
     display: table;
+
     > div > div {
         display: table-cell;
         vertical-align: middle;
     }
-    .feature-icon {
+
+    .card-icon {
         width: 70px;
         height: 70px;
         margin-bottom: 15px;
@@ -466,9 +471,6 @@ body {
     .cta {
         padding: 35px 0;
     }
-    .features {
-        padding-bottom: 5px;
-    }
     /*p,
     .block p {
         margin: 0;
@@ -501,9 +503,6 @@ body {
     }
     .block {
         height: auto;
-    }
-    .feature-col {
-        padding-bottom: 30px;
     }
 }
 @media (max-width: 768px) {

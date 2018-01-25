@@ -1,5 +1,5 @@
 class FinishAssessmentHandler
-    def handle(assessment_id,answers_param)
+    def execute(assessment_id,answers_param)
         assessment=Assessment.find(assessment_id)
 		assessment.completed= true
 
@@ -9,15 +9,15 @@ class FinishAssessmentHandler
 		answers= []
 		questions= []
 		answers_param.each do |ap|
+			question=Question.lock.find_by(name: ap[:question])
 			answer=Answer.new(
-				pillar: ap[:pillar],
-				question_id: ap[:question],
+				pillar: question.pillar,
+				question_id: question.id,
 				assessment_id: assessment_id,
 				answer: ap[:answer]
-			)
-			answers << answer
-			question=Question.lock.find(ap[:question])
+				)
 			question.update_averages(answer: answer.answer,respondents_number: assessment_totals.respondents_number)
+			answers << answer
 			questions << question			
 		end
 

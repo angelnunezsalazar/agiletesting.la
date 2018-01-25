@@ -14,7 +14,7 @@ describe 'Finish Assessment Handler' do
             stub_default_assessmenttotals
 
             handler=FinishAssessmentHandler.new
-            handler.handle(assessment_id,answers_param)
+            handler.execute(assessment_id,answers_param)
             
             expect(assessment.completed).to eq(true)
         end	
@@ -29,7 +29,7 @@ describe 'Finish Assessment Handler' do
             allow(AssessmentTotals).to receive_message_chain(:lock,:find).and_return(assessment_totals)
 
             handler=FinishAssessmentHandler.new
-            handler.handle(assessment_id,answers_param)
+            handler.execute(assessment_id,answers_param)
             
             expect(assessment_totals.respondents_number).to eq(2)
         end	
@@ -38,18 +38,18 @@ describe 'Finish Assessment Handler' do
     describe 'Questions' do
         it 'updates the averages for all questions' do
             assessment_id=1
-            answers_param = [{question: 1, answer: 5, pillar: 'anypillar'},
-                             {question: 2, answer: 4, pillar: 'anypillar'}]
+            answers_param = [{question: "Question1", answer: 5},
+                             {question: "Question2", answer: 4}]
             stub_defaul_assessment(assessment_id)
             stub_respondents_number(respondents_number: 0)
 
             question1=stub_model(Question, :sum_all_answers => 0, :average_current => 0, :average_previous => 0)
-            allow(Question).to receive_message_chain(:lock,:find).with(1).and_return(question1)
+            allow(Question).to receive_message_chain(:lock,:find_by).with(hash_including(:name => "Question1")).and_return(question1)
             question2=stub_model(Question, :sum_all_answers => 0, :average_current => 0, :average_previous => 0)
-            allow(Question).to receive_message_chain(:lock,:find).with(2).and_return(question2)
+            allow(Question).to receive_message_chain(:lock,:find_by).with(hash_including(:name => "Question2")).and_return(question2)
 
             handler=FinishAssessmentHandler.new
-            handler.handle(assessment_id,answers_param)
+            handler.execute(assessment_id,answers_param)
 
             expect(question1.sum_all_answers).to eq(5)
             expect(question1.average_previous).to eq(0)

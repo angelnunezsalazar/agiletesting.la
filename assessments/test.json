@@ -1,0 +1,9 @@
+{
+    "email": "test@email.com",
+    "contry": "Perú",
+    "company": "Company",
+    "answers":[
+        {"question":"strftime-time-format-in-ruby","answer":"what-is-gemset","pillar":"what-is-gemset"},
+        {"question":"strftime-time-format-in-ruby","answer":"what-is-gemset","pillar":"what-is-gemset"}
+    ]
+}
