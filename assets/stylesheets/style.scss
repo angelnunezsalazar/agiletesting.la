@@ -20,7 +20,7 @@ a {
   Elements
   ================================================== */
 
-.btn {
+.btn-assessment {
     background-color: $color-primary;
     border: 3px solid $color-primary;
     font-family: $font-secondary;
@@ -30,8 +30,8 @@ a {
     &:hover {
         background-color: #fff;
         color: $color-primary;
+        text-decoration: none !important;
     }
-
 }
 .btn-ghost {
     border: 3px solid #fff;
@@ -52,9 +52,7 @@ section {
     margin: 0;
     overflow: hidden;
 }
-a:hover {
-    text-decoration: none !important;
-}
+
 .scrolltop {
     display: none;
     position: fixed;
@@ -690,6 +688,19 @@ Assessments Results
     text-align: center;
   }
 
+  @media (max-width: 768px){
+    .nav-item {
+        width: 170px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .nav-item{
+      width: 110px;
+      font-size: 13px;
+    }
+  }
+
   .nav-link {
     color: $color-primary;
     height: 100%;
@@ -702,22 +713,6 @@ Assessments Results
     }
   }
 }
-
-@media (max-width: 768px){
-  #tab-navigation .nav-item {
-      width: 170px;
-  }
-}
-
-@media (max-width: 576px) {
-  #tab-navigation{
-    .nav-item{
-      width: 110px;
-      font-size: 13px;
-    }
-  }
-}
-
 
 section.assessment-results {
   padding: 20px 0;
@@ -732,6 +727,37 @@ section.assessment-results {
 
   .questions{
     padding-top:20px;
+  }
+
+  .btn-return{
+    color: $color-primary;
+    font-size: $font-size-small;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  @media (max-width: 576px) {
+    .btn-return{
+      font-size: 13px;
+    }
+  }
+
+}
+
+.return-home {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 42px;
+  height: 42px;
+  //border-radius: 50%;
+  background: $color-primary;
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  &:hover, &:active, &:focus {
+      color: #fff !important;
+      opacity: .75;
   }
 }
 
@@ -771,7 +797,7 @@ footer.share-footer {
         margin-bottom: 0;
   
         .jssocials-share-link {
-          font-size: 18px;
+          font-size: $font-size-small;
           display: inline-block;
           background: $color-paragraph-bold;
           color: #fff;
@@ -798,9 +824,11 @@ footer.share-footer {
     .social{
       .share-text{
         float: none;
+        padding: 10px 0;
       }
       #share-links{
         padding-top: 0px;
+        padding-bottom: 10px;
         float: none;
       }
     }
@@ -811,15 +839,15 @@ footer.share-footer {
   footer.share-footer {
     .social{
       .share-text{
-        font-size: 20px;
+        font-size: 16px;
       }
       #share-links{
         .jssocials-share{
           .jssocials-share-link {
-            font-size: 16px;
+            font-size: 15px;
             width: 30px;
             height: 30px;
-            padding: 5.5px 0;
+            padding: 6.5px 0;
           }
         }
       }

@@ -2,7 +2,9 @@
 require 'httparty'
 
 def load_assessment(assessment_json)
-    @result = HTTParty.post("http://localhost:9292/api/assessment", 
+    url = "http://agiletesting.la/api/assessment"
+    #url = "http://localhost:9292/api/assessment"
+    @result = HTTParty.post(url, 
         :body => assessment_json,
         :headers => { 'Content-Type' => 'application/json' })
     return @result

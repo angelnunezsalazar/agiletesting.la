@@ -1,7 +1,7 @@
 {
     "email": "hola@agiletesting.la",
     "country": "Perú",
-    "company": "Template",
+    "company": "Empresa",
     "industry": "banca",
     "answers":[
         {"question":"SprintNoEsUnaCascada","answer":2},

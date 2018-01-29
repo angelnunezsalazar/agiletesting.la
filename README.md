@@ -32,6 +32,7 @@ Actualizar BD
 
 	$ db/drop_all_tables.sh
 	$ heroku run rake db:migrate --app agiletesting
+	$ heroku run rake db:seed --app agiletesting
 
 Logs
 -----------------
