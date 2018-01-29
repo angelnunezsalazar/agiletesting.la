@@ -12,6 +12,15 @@ Instrucciones
 
 	Heroku extraerá automáticamente los cambios y los desplegará en su plataforma
 
+Configuring Domain
+--------------------
+
+	$ heroku config:add CANONICAL_HOST=www.agiletesting.la --app agiletesting
+	$ heroku domains:add agiletesting.la --app agiletesting
+	$ heroku domains:add www.agiletesting.la --app agiletesting
+
+Notas: https://github.com/Helabs/pah/wiki/Configuring-domain-on-Heroku
+
 Actualizar BD
 ----------------
 

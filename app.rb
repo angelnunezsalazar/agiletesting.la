@@ -15,8 +15,7 @@ Tilt.register Tilt::ERBTemplate, 'html'
 register AssetPipeline
 
 get '/' do
-	erb :'home'
-	#redirect '/assessment'
+	redirect '/assessment'
 end
 
 get '/assessment' do
