@@ -3,10 +3,10 @@ require "sinatra/content_for"
 require 'sinatra/flash'
 require 'sinatra/activerecord'
 require 'json'
-require './core/infrastructure/asset_pipeline'
+require './app/infrastructure/asset_pipeline'
 require './config/environments'
-Dir[File.join(File.dirname(__FILE__), 'core/model', '*.rb')].each {|file| require file }
-Dir[File.join(File.dirname(__FILE__), 'core/handlers', '*.rb')].each {|file| require file }
+Dir[File.join(File.dirname(__FILE__), 'app/model', '*.rb')].each {|file| require file }
+Dir[File.join(File.dirname(__FILE__), 'app/handlers', '*.rb')].each {|file| require file }
 
 set :public_folder, 'public'
 set :views, File.dirname(__FILE__) + "/views"
@@ -24,7 +24,7 @@ end
 
 post '/assessment-start' do
 	create_assessment_draft=CreateAssessmentDraftHandler.new
-	assessment=create_assessment_draft.execute(params[:email],params[:country],params[:company])
+	assessment=create_assessment_draft.execute(params[:email],params[:country],params[:company],params[:industry])
 	redirect "/assessment-questions/#{assessment.id}-#{assessment.email}"
 end
 
@@ -70,13 +70,11 @@ get '/api/questions' do
 end
 
 post '/api/assessment' do
-	payload = JSON.parse(request.body.read)
+	payload = JSON.parse(request.body.read,{:symbolize_names => true})
 	Assessment.transaction do
-		create_assessment_draft=CreateAssessmentDraftHandler.new
-		assessment=create_assessment_draft.execute(payload[:email],payload[:country],payload[:company])
-		finish_assessment=FinishAssessmentHandler.new
-		assessment=finish_assessment.execute(assessment.id,payload[:answers])		
+		assessment=CreateAssessmentDraftHandler.new.execute(payload[:email],payload[:country],payload[:company],payload[:industry])
+		assessment=FinishAssessmentHandler.new.execute(assessment.id,payload[:answers])		
+		return {:message => "Assessment Created",
+			 	:assessment => assessment}.to_json
 	end
-	return { :message => "Assessment Created",
-			 :assessment => assessment }.to_json
 end

@@ -1,20 +1,18 @@
 
 require 'httparty'
 
-Dir.glob('./*.json') do |json_file|
-    assessment_json = File.read(json_file)
-    load_assessment(assessment_json)
+def load_assessment(assessment_json)
+    @result = HTTParty.post("http://localhost:9292/api/assessment", 
+        :body => assessment_json,
+        :headers => { 'Content-Type' => 'application/json' })
+    return @result
 end
 
-def load_assessment ()
-    @result = HTTParty.post(@urlstring_to_post.to_str, 
-        :body => {:email => 'This is the screen name', 
-                 :country => 'Application Problem', 
-                 :company => 'Open', 
-                 :answers => {
-                    :answers => 'Normal',
-                 }
-                }.to_json,
-        :headers => { 'Content-Type' => 'application/json' })
-    put @result
+Dir.glob('./*.json') do |json_file|
+    puts "Reading #{json_file} file"
+    assessment_json = File.read(json_file)
+    puts "Uploading Assessment"
+    puts assessment_json
+    result=load_assessment(assessment_json)
+    puts "Successfull #{result}"
 end

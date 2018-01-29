@@ -1,5 +1,5 @@
 require 'nulldb_helper'
-require './core/model/question'
+require './app/model/question'
 
 describe Question do
 

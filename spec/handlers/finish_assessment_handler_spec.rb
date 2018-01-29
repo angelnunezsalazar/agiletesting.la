@@ -1,6 +1,6 @@
 require 'nulldb_helper'
-Dir[File.join(File.dirname(__FILE__), '../../core/model', '*.rb')].each {|file| require file }
-require './core/handlers/finish_assessment_handler'
+Dir[File.join(File.dirname(__FILE__), '../../app/model', '*.rb')].each {|file| require file }
+require './app/handlers/finish_assessment_handler'
 
 describe 'Finish Assessment Handler' do
 
