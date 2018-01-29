@@ -147,4 +147,8 @@ $(document).ready(function(){
     shares: ["twitter","linkedin","facebook","email"]
   });
 
+  jsSocials.shares.email = {
+    to: "hola@agiletesting.la"
+  };
+
 }); 
