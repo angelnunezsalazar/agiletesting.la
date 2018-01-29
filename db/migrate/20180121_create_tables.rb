@@ -18,7 +18,7 @@ class CreateTables < ActiveRecord::Migration[5.1]
 		end
 
 		create_table "answers", :force => true do |t|
-			t.integer "answer"
+			t.decimal "answer"
 			t.integer "pillar"
 			t.references :assessment, foreign_key: true
 			t.references :question, foreign_key: true

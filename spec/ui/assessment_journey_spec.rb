@@ -8,7 +8,7 @@ describe "User in the Assessment Journey", type: 'ui' do
     it "Completes the Assessment" do
         driver.navigate.to root_url
         
-        driver.find_element(id: 'email').send_keys "angel@gmail.com"
+        driver.find_element(id: 'email').send_keys "hola@agiletesting.la"
         driver.find_element(id: 'organization').send_keys "kleer"
         driver.find_element(id: 'industry')
               .find_element(:css,"option[value='agricultura']").click

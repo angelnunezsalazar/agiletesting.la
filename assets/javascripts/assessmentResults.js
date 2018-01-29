@@ -72,7 +72,8 @@ AssessmentResults.prototype = {
     return $.getJSON("/api/assessment/"+this.assessmentId+"/answers?pillar="+pillar, function (data) {
       self.companyData=[]  
       $.each(data,function (index,value) {
-        self.companyData.push(value.answer)
+        var parseData=+parseFloat(value.answer).toFixed(2);
+        self.companyData.push(parseData)
       });
     });
   },

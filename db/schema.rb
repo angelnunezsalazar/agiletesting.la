@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 20180121) do
 
   create_table "answers", force: :cascade do |t|
-    t.integer "answer"
+    t.decimal "answer"
     t.integer "pillar"
     t.integer "assessment_id"
     t.integer "question_id"
