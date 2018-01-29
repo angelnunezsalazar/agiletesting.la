@@ -87,6 +87,26 @@
   <% end %>
 
 
-  <script src="<%= javascript_path 'assessment-results' %>"></script>
+  <script src="<%= javascript_path 'assessmentResults' %>"></script>
+
+  <script>
+  $(document).ready(function(){
+    var assessmentResults = new AssessmentResults({
+      assessmentId: "<%= @assessment_id %>"
+    });
+    assessmentResults.results();
+
+    $("#share-links").jsSocials({
+      showLabel: false,
+      showCount: false,
+      url: "http://agiletesting.la/assessment",
+      text: "Agile Testing Assessment",
+      shares: ["twitter","linkedin","facebook","email"]
+    });
+
+    $("#share-links").jsSocials("shareOption", "email", "to", "hola@agiletesting.la");
+  }); 
+  </script>
+
 </body>
 </html>  
