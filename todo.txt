@@ -2,14 +2,6 @@
 BACKLOG
 ********
 
-MVP
-=======
-Social
-- Metadata
-
-Data
-- Cargar Datos de los Assessments
-
 NEXT
 ==========
 

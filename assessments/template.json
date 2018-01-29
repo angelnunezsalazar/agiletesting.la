@@ -1,0 +1,23 @@
+{
+    "email": "test@email.com",
+    "country": "Perú",
+    "company": "Company",
+    "industry": "Industry",
+    "answers":[
+        {"question":"SprintNoEsUnaCascada","answer":5},
+        {"question":"TresAmigos","answer":5},
+        {"question":"ParticiparDesdeElInicio","answer":5},
+        {"question":"TodosHacenTesting","answer":5},
+        {"question":"TodosSonResponsables","answer":5},
+        {"question":"PiramidePruebas","answer":5},
+        {"question":"NoSeNecesitaTareasManuales","answer":5},
+        {"question":"EjecutanContinuamente","answer":5},
+        {"question":"ResultadosTransparentes","answer":5},
+        {"question":"RiskBasedTesting","answer":5},
+        {"question":"ExploratoryTesting","answer":5},
+        {"question":"DisenoPruebaIterativo","answer":5},
+        {"question":"BalancePruebas","answer":5},
+        {"question":"EstandaresConsistentes","answer":5},
+        {"question":"FeedbackEsPorMejoras","answer":5}        
+    ]
+}

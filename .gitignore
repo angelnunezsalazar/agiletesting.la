@@ -2,4 +2,3 @@ bundle
 node_modules
 db/development.sqlite3
 tmp
-assessments/*.json
