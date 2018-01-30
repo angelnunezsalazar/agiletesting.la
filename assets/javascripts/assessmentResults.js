@@ -129,7 +129,7 @@ AssessmentResults.prototype = {
             }
         },
         series: [{
-            name: 'Tu Empresa',
+            name: 'Tu Organización',
             data: companyData
 
         }, {
