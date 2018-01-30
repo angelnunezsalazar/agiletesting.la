@@ -715,7 +715,8 @@ Assessments Results
 }
 
 section.assessment-results {
-  padding: 20px 0;
+  padding-top: 20px;
+  padding-bottom: 0px;
   
   h2{
     margin-bottom: 25px;
@@ -728,50 +729,63 @@ section.assessment-results {
   .questions{
     padding-top:20px;
   }
-
-  .btn-return{
-    color: $color-primary;
-    font-size: $font-size-small;
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
-
-  @media (max-width: 576px) {
-    .btn-return{
-      font-size: 13px;
-    }
-  }
-
 }
 
-.return-home {
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  width: 42px;
-  height: 42px;
-  //border-radius: 50%;
-  background: $color-primary;
-  color: #fff;
-  text-align: center;
-  font-size: 24px;
-  &:hover, &:active, &:focus {
+#assessment-nav-bar{
+  margin-bottom: 20px;
+
+  .return-home-link {
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    &:hover, &:active, &:focus {
       color: #fff !important;
       opacity: .75;
+    }
+  }
+  
+  .return-home-icon{
+    width: 24px;
+    height: 24px; 
+    background: $color-primary;
+    padding: 4px 0;
+  }
+  
+  .return-home-text{
+    color: $color-primary;
+    margin-right: 5px; 
+    margin-left: 5px;
   }
 }
+
+
+
 
 
 /* ==================================================
 Share Assessment Footer
 ================================================== */
 
-footer.share-footer {
+.html-always-bottom-footer{
+  height: 100%;
+}
+
+.body-always-bottom-footer{
+  position: relative;
+  padding-bottom: 6rem;
+  min-height: 100%;
+}
+
+#share-footer {
   background-color: $background-color-highlight;
   padding:0;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
+
+  @media (max-width: 576px) {
+      //position: static;
+  }
 
   .social {
     display: flex;
@@ -783,14 +797,33 @@ footer.share-footer {
       text-align: center;
       float: right;
     }
-  
+ 
+    @media (max-width: 768px) {
+      .share-text{
+        float: none;
+        padding: 10px 0;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .share-text{
+        font-size: 16px;
+      }
+    }
+              
     #share-links{
       display: flex;
       padding-top: 15px;
       padding-left:0px;
       list-style: none;
       float: left;
-  
+    
+      @media (max-width: 768px) {
+          padding-top: 0px;
+          padding-bottom: 10px;
+          float: none;
+      }
+
       .jssocials-share{
         float: left;
         padding: 0px 10px;
@@ -814,35 +847,8 @@ footer.share-footer {
           background: $color-primary;
           color: #fff;
         }
-      }
-    }
-  }
-}
 
-@media (max-width: 768px) {
-  footer.share-footer {
-    .social{
-      .share-text{
-        float: none;
-        padding: 10px 0;
-      }
-      #share-links{
-        padding-top: 0px;
-        padding-bottom: 10px;
-        float: none;
-      }
-    }
-  }
-}
-
-@media (max-width: 576px) {
-  footer.share-footer {
-    .social{
-      .share-text{
-        font-size: 16px;
-      }
-      #share-links{
-        .jssocials-share{
+        @media (max-width: 576px) {
           .jssocials-share-link {
             font-size: 15px;
             width: 30px;
