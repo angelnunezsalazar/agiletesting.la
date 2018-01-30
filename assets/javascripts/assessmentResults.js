@@ -99,7 +99,7 @@ AssessmentResults.prototype = {
             text: 'Enfoque de Todo el Equipo'
         },
         subtitle: {
-            text: 'El Nivel de Madurez de tu empresa comparado con otros encuestados'
+            text: 'El Nivel de Madurez de tu organización comparado con otros encuestados'
         },
         xAxis: {
             categories: labels,
