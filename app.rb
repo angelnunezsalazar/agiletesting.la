@@ -64,12 +64,12 @@ get '/api/assessment/:assessment_id/answers' do
 	return answers.to_json;
 end
 
-get '/api/assessment' do
+get '/api/assessments' do
 	assessments = Assessment.all
 	return assessments.to_json;
 end
 
-post '/api/assessment' do
+post '/api/assessments' do
 	payload = JSON.parse(request.body.read,{:symbolize_names => true})
 	Assessment.transaction do
 		assessment=CreateAssessmentDraftHandler.new.execute(payload[:email],payload[:country],payload[:company],payload[:industry])
