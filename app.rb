@@ -64,9 +64,9 @@ get '/api/assessment/:assessment_id/answers' do
 	return answers.to_json;
 end
 
-get '/api/questions' do
-	questions = Question.where(pillar: params[:pillar])
-	return questions.to_json;
+get '/api/assessment' do
+	assessments = Assessment.all
+	return assessments.to_json;
 end
 
 post '/api/assessment' do
@@ -77,4 +77,9 @@ post '/api/assessment' do
 		return {:message => "Assessment Created",
 			 	:assessment => assessment}.to_json
 	end
+end
+
+get '/api/questions' do
+	questions = Question.where(pillar: params[:pillar])
+	return questions.to_json;
 end
