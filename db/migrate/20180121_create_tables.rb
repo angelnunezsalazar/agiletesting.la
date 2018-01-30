@@ -27,5 +27,7 @@ class CreateTables < ActiveRecord::Migration[5.1]
 		create_table "assessment_totals", :force => true do |t|
 			t.integer "respondents_number"
 		end
+
+
 	end
 end

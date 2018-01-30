@@ -3,6 +3,10 @@ require 'sinatra/activerecord/rake'
 require 'rake/tasklib'
 require 'rake/sprocketstask'
 
+task :log do
+  ActiveRecord::Base.logger = Logger.new(STDOUT)
+end
+
 namespace :assets do
   desc 'Precompile assets'
   task :precompile do
