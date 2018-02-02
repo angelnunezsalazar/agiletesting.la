@@ -28,15 +28,16 @@ AssessmentResults.prototype = {
     this.onTabsClick();
   },
   showFirstTab:function(){
-    this.showTab($("#wholeTeam-tab"),1,document.getElementById("wholeTeamCanvas"),this.wholeTeamLabels)
+    this.showTab('Enfoque de Todo el Equipo',$("#wholeTeam-tab"),1,document.getElementById("wholeTeamCanvas"),this.wholeTeamLabels)
   },
-  showTab: function(tab,pillar,canvas,labels){
+  showTab: function(chartTitle,tab,pillar,canvas,labels){
     var self=this;
     $.when(
       self.getCompanyData(pillar),
       self.getOthersData(pillar)
     ).then(function(){
       self.showChart(
+        chartTitle,
         canvas,
         labels,
         self.companyData,
@@ -50,21 +51,25 @@ AssessmentResults.prototype = {
     $('#tab-navigation a').on('click',function (e) {
       e.preventDefault();
       var pillar = $(this).attr("data-pillar");
+      var chartTitle= '';
       var canvas= '';
       var labels = [];
       if(pillar==1) {
+        chartTitle='Enfoque de Todo el Equipo';
         canvas = 'wholeTeamCanvas';
         labels= self.wholeTeamLabels
       }
       if(pillar==2) {
+        chartTitle='Automatización de Pruebas';
         canvas = 'automationCanvas';
         labels= self.automationLabels
       }
       if(pillar==3) {
+        chartTitle='Pruebas de Software';
         canvas = 'testingCanvas';
         labels= self.testingLabels
       }
-      self.showTab($(this),pillar,canvas,labels)
+      self.showTab(chartTitle,$(this),pillar,canvas,labels)
     });
   },
   getCompanyData: function(pillar){
@@ -87,7 +92,7 @@ AssessmentResults.prototype = {
       });
     });
   },
-  showChart: function(canvas,labels,companyData,othersData){
+  showChart: function(chartTitle,canvas,labels,companyData,othersData){
     Highcharts.setOptions({
         colors: ['#50B432', '#E04F00']
     });
@@ -96,7 +101,7 @@ AssessmentResults.prototype = {
             type: 'column'
         },
         title: {
-            text: 'Enfoque de Todo el Equipo'
+            text: chartTitle
         },
         subtitle: {
             text: 'El Nivel de Madurez de tu organización comparado con otros encuestados'
