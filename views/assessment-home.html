@@ -56,7 +56,7 @@
             Descubre tu nivel de madurez en Agile Testing e identifica el siguiente paso en tu camino de mejora continua en testing.
         </p>
       </div>
-      <a class="btn-assessment btn btn-full d-none d-sm-inline-block" href="#agile-testing">Comienza Ahora</a>
+      <a id="comienza-ahora" class="btn-assessment btn btn-full d-none d-sm-inline-block" href="#agile-testing">Comienza Ahora</a>
     </div>
   </div>
 </section>
@@ -123,7 +123,7 @@
     </div>
     <div class="row">
       <div class="col-12 text-center">
-          <a class="btn-assessment btn btn-full btn-go-next-section d-none d-sm-inline-block" href="#assessment-que-es">Conoce Más del Assessment</a>  
+          <a id="assessment-que-es" class="btn-assessment btn btn-full btn-go-next-section d-none d-sm-inline-block" href="#assessment-que-es">Conoce Más del Assessment</a>  
       </div>
     </div>
   </div>
@@ -201,7 +201,7 @@
     </div>
     <div class="row">
       <div class="col-12 text-center">
-          <a class="btn-assessment btn btn-full btn-go-next-section d-none d-sm-inline-block" href="#assessment-start">Evalua la Madurez de tu Equipo</a>
+          <a id="evalua-tu-madurez" class="btn-assessment btn btn-full btn-go-next-section d-none d-sm-inline-block" href="#assessment-start">Evalua la Madurez de tu Equipo</a>
       </div>
     </div>
   </div>
@@ -298,7 +298,7 @@
                   <option value="VE">Venezuela</option>
               </select>
             </div>
-            <div class="form-group text-center"><button id="submit" type="submit">Comenzar</button></div>
+            <div class="form-group text-center"><button id="iniciar-assessment-submit" type="submit">Comenzar</button></div>
           </form>
         </div>
       </div>
@@ -325,16 +325,5 @@
   <script src="/vendor/easing/easing.min.js"></script>
 
   <script src="<%= javascript_path 'assessmentHome' %>"></script>
-
-  <script>
-    var host = window.location.hostname;
-    if(host != "localhost")
-    {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-11277405-2');
-    }
-  </script>
 </body>
 </html>

@@ -9,12 +9,12 @@ describe "User in the Assessment Journey", type: 'ui' do
         driver.navigate.to root_url
         
         driver.find_element(id: 'email').send_keys "hola@agiletesting.la"
-        driver.find_element(id: 'organization').send_keys "kleer"
+        driver.find_element(id: 'company').send_keys "kleer"
         driver.find_element(id: 'industry')
               .find_element(:css,"option[value='agricultura']").click
         driver.find_element(id: 'country')
               .find_element(:css,"option[value='PE']").click
-        driver.find_element(id: 'submit').click
+        driver.find_element(id: 'iniciar-assessment-submit').click
         
         driver.find_element(css: "#SprintNoEsUnaCascada option[value='5']").click
         driver.find_element(css: "#TresAmigos option[value='5']").click
