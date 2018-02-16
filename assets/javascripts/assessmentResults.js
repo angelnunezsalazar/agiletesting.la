@@ -19,7 +19,7 @@ AssessmentResults.prototype = {
     this.testingLabels=["Risk Based Testing para determinar el alcance de las pruebas",
                    "Sesiones de Exploratory Testing son parte regular del trabajo",
                    "Balance entre pruebas manuales, automatizadas y exploratorias",
-                   "Estrategia, y diseño de la prueba de manera iterativa",
+                   "Planificación y diseño de la prueba de manera iterativa",
                    "Estándares consistentes, transparentes y centralizados",
                    "El producto no tiene fallos graves en producción"];
   },
