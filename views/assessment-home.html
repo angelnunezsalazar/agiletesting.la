@@ -325,5 +325,28 @@
   <script src="/vendor/easing/easing.min.js"></script>
 
   <script src="<%= javascript_path 'assessmentHome' %>"></script>
+
+  <script>
+    $(document).ready(function(){
+      scrollToTopLink = new ScrollToTopLink('.scrolltop');
+      scrollToTopLink.enable();
+
+      smoothScrolling = new SmoothScrolling();
+      smoothScrolling.enableForAllLinks();
+
+      var analytics = new Analytics();
+      analytics.sendEvent('0. Ingresa al Home','Home Buttons');
+      analytics.addEventOnClick('#comienza-ahora','1. Ir a Agile Testing (Comienza Ahora)','Home Buttons');
+      analytics.addEventOnClick('#assessment-que-es','2. Ir a Assessment Que Es','Home Buttons');
+      analytics.addEventOnClick('#evalua-tu-madurez','3. Ir a Formulario Inicio','Home Buttons');
+
+      $("#assessment-form" ).validate( {
+        submitHandler: function (form) {
+          analytics.sendEvent('4. Comenzar Assessment','Home Buttons');
+          form.submit();
+        }
+      });
+    }); 
+  </script>
 </body>
 </html>
