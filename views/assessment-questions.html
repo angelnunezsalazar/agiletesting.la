@@ -20,6 +20,7 @@
     <link href="/vendor/font-google/font-google-raleway-roboto.css" rel="stylesheet">
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/vendor/noUiSlider/nouislider.css" rel="stylesheet">
   <% end %>
 
   <%= stylesheet_tag 'style' %>
@@ -75,6 +76,7 @@
                     <% @questions_whole_team.each do |question| %>
                     <div class="form-group">
                       <p><%= question.description %></p>
+                      <div id="answer-slider"></div>
                       <select id="<%= question.name %>" name="answers[<%= question.id %>][answer]" class="form-control" data-rule-required="true" data-msg-required="Por favor selecciona una respuesta">
                         <option selected disabled value="">Selecciona una respuesta</option> 
                         <option value="1">1 - Nunca</option>
@@ -163,6 +165,7 @@
   <% else %>
     <script src="/vendor/jquery/jquery.min.js"></script>
     <script src="/vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="/vendor/noUiSlider/nouislider.min.js"></script>
   <% end %>
 
   <script src="<%= javascript_path 'assessmentQuestions' %>"></script>

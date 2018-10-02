@@ -98,26 +98,30 @@ AssessmentResults.prototype = {
     });
     Highcharts.chart(canvas, {
         chart: {
-            type: 'column'
+          polar: true,  
+          type: 'line',
         },
         title: {
             text: chartTitle
         },
-        subtitle: {
-            text: 'El Nivel de Madurez de tu organización comparado con otros encuestados'
-        },
         xAxis: {
             categories: labels,
-            crosshair: true
+            crosshair: true,
+            tickmarkPlacement: 'on',
+            lineWidth: 0,
+            labels: {
+              style: {
+                fontSize: '12px'
+              }
+            }
         },
         yAxis: {
             min: 0,
             max: 5,
             tickInterval: 1,
             endOnTick:false,
-            title: {
-                text: null
-            }
+            showLastLabel: true,
+            lineWidth: 0,
         },
         tooltip: {
             headerFormat: '<span>{point.key}</span><table>',
@@ -126,12 +130,6 @@ AssessmentResults.prototype = {
             footerFormat: '</table>',
             shared: true,
             useHTML: true
-        },
-        plotOptions: {
-            column: {
-                pointPadding: 0.2,
-                borderWidth: 0
-            }
         },
         series: [{
             name: 'Tu Organización',

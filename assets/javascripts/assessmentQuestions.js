@@ -80,4 +80,27 @@ $(document).ready(function(){
     return !!(window.history && history.pushState);
   }
 
+  var pipFormats = {'1':'Nunca', '2':'Rara Vez', '3':'Algunas Veces', '4':'Casi Siempre', '5':'Siempre'};
+  var range = document.getElementById('answer-slider');
+  noUiSlider.create(range,{
+    start: 1,
+    behaviour: 'tap',
+    step: 1,
+    connect: 'lower',
+    range: {
+       'min':  1,
+       'max':  5
+    },
+    pips: {
+       mode: 'values',
+       values: [1,2,3,4,5],
+       density: 24,
+       format: {
+        to: function(value){
+          return pipFormats[value];
+        }
+      }
+    }
+  });
+
 });
