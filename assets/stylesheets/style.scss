@@ -677,6 +677,20 @@ section.assessment-questions {
     }
 }
 
+.answer-slide{
+  margin-bottom: 60px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.question-description{
+  font-weight: 500
+}
+
+.noUi-connect {
+  background: $color-primary;
+}
+
 /* ==================================================
 Assessments Results
 ================================================== */
@@ -757,10 +771,6 @@ section.assessment-results {
     margin-left: 5px;
   }
 }
-
-
-
-
 
 /* ==================================================
 Share Assessment Footer

@@ -68,24 +68,18 @@
                   <h2 class="section-title">Enfoque de Todo el Equipo</h2>
                   <p class="lead">Todos somos responsables de la calidad y todos colaboramos realizando diversas actividades de testing.</p>
                 </div>
+     
                 <div class="alert alert-secondary text-center" role="alert">
-                    <h4 class="alert-heading">Evalua a tu Nivel de Madurez</h4>
-                    <p class="mb-0">Evalua cada una de las siguientes sentencias en una escala de frecuencia del 1-Nunca al 5-Siempre.</p>
+                    <h4 class="alert-heading">Evalua tu Nivel de Madurez</h4>
+                    <p class="mb-0">Evalua cada una de las siguientes sentencias en una escala de frecuencia.</p>
                 </div>
                 <div class="form">
                     <% @questions_whole_team.each do |question| %>
                     <div class="form-group">
-                      <p><%= question.description %></p>
-                      <div id="answer-slider"></div>
-                      <select id="<%= question.name %>" name="answers[<%= question.id %>][answer]" class="form-control" data-rule-required="true" data-msg-required="Por favor selecciona una respuesta">
-                        <option selected disabled value="">Selecciona una respuesta</option> 
-                        <option value="1">1 - Nunca</option>
-                        <option value="2">2 - Rara Vez</option>
-                        <option value="3">3 - Algunas Veces</option>
-                        <option value="4">4 - Casi Siempre</option>
-                        <option value="5">5 - Siempre</option>
-                      </select>
+                      <p class="question-description"><%= question.description %></p>
+                      <div id="<%= question.id %>" class="answer-slide"></div>
                       <input type="hidden" name="answers[<%= question.id %>][question]" value="<%= question.name %>">
+                      <input type="hidden" name="answers[<%= question.id %>][answer]">
                     </div>
                     <% end %>
                     <div class="form-group text-center"><button id="step-1-next">Continuar</button></div>
@@ -97,22 +91,16 @@
                   <p class="lead">Una efectiva automatización de pruebas permite ahorrar mucho tiempo en la ejecución de chequeos repetitivos y laboriosos.</p>
                 </div>
                 <div class="alert alert-secondary text-center" role="alert">
-                    <h4 class="alert-heading">Evalua a tu Nivel de Madurez</h4>
+                    <h4 class="alert-heading">Evalua tu Nivel de Madurez</h4>
                     <p class="mb-0">Evalua cada una de las siguientes sentencias en una escala de frecuencia del 1-Nunca al 5-Siempre.</p>
                 </div>
                 <div class="form">
                     <% @questions_automation.each do |question| %>
                     <div class="form-group">
                       <p><%= question.description %></p>
-                      <select id="<%= question.name %>" name="answers[<%= question.id %>][answer]" class="form-control" data-rule-required="true" data-msg-required="Por favor selecciona una respuesta">
-                        <option selected disabled value="">Selecciona una respuesta</option>
-                        <option value="1">1 - Nunca</option>
-                        <option value="2">2 - Rara Vez</option>
-                        <option value="3">3 - Algunas Veces</option>
-                        <option value="4">4 - Casi Siempre</option>
-                        <option value="5">5 - Siempre</option>
-                      </select>
+                      <div id="<%= question.id %>" class="answer-slide"></div>
                       <input type="hidden" name="answers[<%= question.id %>][question]" value="<%= question.name %>">
+                      <input type="hidden" name="answers[<%= question.id %>][answer]">
                     </div>
                     <% end %>
                     <div class="form-group text-center">
@@ -127,22 +115,17 @@
                   <p class="lead">Se enfoca en la excelencia, profesión y artesanía en las pruebas de software ya que esto potencia la agilidad.</p>
                 </div>
                 <div class="alert alert-secondary text-center" role="alert">
-                    <h4 class="alert-heading">Evalua a tu Nivel de Madurez</h4>
+                    <h4 class="alert-heading">Evalua tu Nivel de Madurez</h4>
                     <p class="mb-0">Evalua cada una de las siguientes sentencias en una escala de frecuencia del 1-Nunca al 5-Siempre.</p>
                 </div>
                 <div class="form">
                     <% @questions_testing.each do |question| %>
                     <div class="form-group">
                       <p><%= question.description %></p>
-                      <select id="<%= question.name %>" name="answers[<%= question.id %>][answer]" class="form-control" data-rule-required="true" data-msg-required="Por favor selecciona una respuesta">
-                        <option selected disabled value="">Selecciona una respuesta</option>
-                        <option value="1">1 - Nunca</option>
-                        <option value="2">2 - Rara Vez</option>
-                        <option value="3">3 - Algunas Veces</option>
-                        <option value="4">4 - Casi Siempre</option>
-                        <option value="5">5 - Siempre</option>
-                      </select>
+                      <div id="<%= question.id %>" class="answer-slide"></div>
+                      
                       <input type="hidden" name="answers[<%= question.id %>][question]" value="<%= question.name %>">
+                      <input type="hidden" name="answers[<%= question.id %>][answer]">
                     </div>
                     <% end %>
                     <div class="form-group text-center">
@@ -161,13 +144,22 @@
 
   <% if settings.production? %>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
   <% else %>
     <script src="/vendor/jquery/jquery.min.js"></script>
-    <script src="/vendor/jquery-validation/jquery.validate.min.js"></script>
     <script src="/vendor/noUiSlider/nouislider.min.js"></script>
   <% end %>
 
   <script src="<%= javascript_path 'assessmentQuestions' %>"></script>
+
+  <script>
+    $(document).ready(function(){
+      $('.answer-slide').each(function() {
+        var answerSlide = new AnswerSlide($(this).get(0));
+        answerSlide.create();
+        var answerInput=$('input[name="answers['+$(this).attr('id')+'][answer]"]').get(0);
+        answerSlide.syncronizeTo(answerInput)
+      });
+    }); 
+  </script>
 </body>
 </html>  

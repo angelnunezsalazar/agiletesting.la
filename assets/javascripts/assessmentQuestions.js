@@ -1,3 +1,41 @@
+var AnswerSlide = function (elementSlide) {
+  var pipFormats = {'1':'Nunca', '2':'Rara Vez', '3':'A Veces', '4':'Casi Siempre', '5':'Siempre'};
+
+  function create() {
+    noUiSlider.create(elementSlide,{
+      start: 1,
+      behaviour: 'tap',
+      step: 1,
+      connect: 'lower',
+      range: {
+         'min':  1,
+         'max':  5
+      },
+      pips: {
+         mode: 'values',
+         values: [1,2,3,4,5],
+         density: 24,
+         format: {
+          to: function(value){
+            return pipFormats[value];
+          }
+        }
+      }
+    });
+  };
+
+  function syncronizeTo(inputElement){
+    elementSlide.noUiSlider.on('update', function(values) {
+      inputElement.value=values
+    });
+  }
+
+  return {
+    create: create,
+    syncronizeTo: syncronizeTo
+  }
+};
+
 $(document).ready(function(){
   var numberOfSteps = 3;
   buttonNextOnClick();
@@ -7,22 +45,17 @@ $(document).ready(function(){
     for (i = 1; i <= numberOfSteps-1; i++) {
       $("#step-" + i + "-next").click({ num: i },function(e) {
         e.preventDefault();
-        var form = $("#questions-form");
-        form.validate();
-
-        if (form.valid()){
-          var num=e.data.num;
-          $("#step-" + num).fadeOut(function(){
-            $("#step-" + (num + 1)).fadeIn(); 
-            $("#step-" + (num + 1)+"-nav").addClass("complete");
-            $("#step-" + (num + 1)+"-nav").removeClass("disabled");
-          });
-          $("html, body").animate({ scrollTop: 0 }, "slow");
-          
-          if(historyApi()){
-            var step=num+1;
-            history.pushState({step:step}, null, "?step-" + step);
-          }
+        var num=e.data.num;
+        $("#step-" + num).fadeOut(function(){
+          $("#step-" + (num + 1)).fadeIn(); 
+          $("#step-" + (num + 1)+"-nav").addClass("complete");
+          $("#step-" + (num + 1)+"-nav").removeClass("disabled");
+        });
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        
+        if(historyApi()){
+          var step=num+1;
+          history.pushState({step:step}, null, "?step-" + step);
         }
       });
     }
@@ -45,7 +78,6 @@ $(document).ready(function(){
 
   function returnFromStep(currentStep){
     $("#step-" + currentStep).fadeOut(function(){
-      $("#step-" + currentStep+ " .form .form-group").removeClass("has-error");
       $("#step-" + (currentStep - 1)).fadeIn(); 
       $("#step-" + currentStep+"-nav").addClass("disabled");
       $("#step-" + currentStep+"-nav").removeClass("complete");
@@ -53,20 +85,6 @@ $(document).ready(function(){
     });
     $("html, body").animate({ scrollTop: 0 }, "slow");
   }
-
-  $("#questions-form").validate( {
-    errorElement: "small",
-    errorPlacement: function ( error, element ) {
-      error.addClass( "form-text" );
-      error.insertAfter( element );
-    },
-    highlight: function ( element, errorClass, validClass ) {
-      $( element ).parents( ".form-group" ).addClass( "has-error" ).removeClass( "has-success" );
-    },
-    unhighlight: function (element, errorClass, validClass) {
-      $( element ).parents( ".form-group" ).addClass( "has-success" ).removeClass( "has-error" );
-    }
-  });
 
   if(historyApi()){
     window.addEventListener("popstate", function(e) {
@@ -79,28 +97,4 @@ $(document).ready(function(){
   function historyApi() {
     return !!(window.history && history.pushState);
   }
-
-  var pipFormats = {'1':'Nunca', '2':'Rara Vez', '3':'Algunas Veces', '4':'Casi Siempre', '5':'Siempre'};
-  var range = document.getElementById('answer-slider');
-  noUiSlider.create(range,{
-    start: 1,
-    behaviour: 'tap',
-    step: 1,
-    connect: 'lower',
-    range: {
-       'min':  1,
-       'max':  5
-    },
-    pips: {
-       mode: 'values',
-       values: [1,2,3,4,5],
-       density: 24,
-       format: {
-        to: function(value){
-          return pipFormats[value];
-        }
-      }
-    }
-  });
-
 });
