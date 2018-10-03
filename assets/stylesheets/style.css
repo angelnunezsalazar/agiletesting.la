@@ -906,98 +906,103 @@ section.assessment-questions .questions {
 .noUi-connect {
   background: #5cb85c; }
 
+/* line 694, assets/stylesheets/style.scss */
+/* line 731, assets/stylesheets/style.css */
+.noUi-pips-horizontal {
+  height: 100%; }
+
 /* ==================================================
 Assessments Results
 ================================================== */
-/* line 698, assets/stylesheets/style.scss */
-/* line 734, assets/stylesheets/style.css */
+/* line 703, assets/stylesheets/style.scss */
+/* line 738, assets/stylesheets/style.css */
 #tab-navigation {
   margin-bottom: 20px; }
 
-/* line 701, assets/stylesheets/style.scss */
-/* line 737, assets/stylesheets/style.css */
+/* line 706, assets/stylesheets/style.scss */
+/* line 741, assets/stylesheets/style.css */
 #tab-navigation .nav-item {
   text-align: center; }
 
 @media (max-width: 768px) {
-  /* line 706, assets/stylesheets/style.scss */
-  /* line 741, assets/stylesheets/style.css */
+  /* line 711, assets/stylesheets/style.scss */
+  /* line 745, assets/stylesheets/style.css */
   #tab-navigation .nav-item {
     width: 170px; } }
 
 @media (max-width: 576px) {
-  /* line 712, assets/stylesheets/style.scss */
-  /* line 745, assets/stylesheets/style.css */
+  /* line 717, assets/stylesheets/style.scss */
+  /* line 749, assets/stylesheets/style.css */
   #tab-navigation .nav-item {
     width: 110px;
     font-size: 13px; } }
 
-/* line 718, assets/stylesheets/style.scss */
-/* line 749, assets/stylesheets/style.css */
+/* line 723, assets/stylesheets/style.scss */
+/* line 753, assets/stylesheets/style.css */
 #tab-navigation .nav-link {
   color: #5cb85c;
   height: 100%;
   padding: .5rem .5rem; }
 
-/* line 722, assets/stylesheets/style.scss */
-/* line 754, assets/stylesheets/style.css */
+/* line 727, assets/stylesheets/style.scss */
+/* line 758, assets/stylesheets/style.css */
 #tab-navigation .nav-link:hover {
   color: #5cb85c; }
 
-/* line 725, assets/stylesheets/style.scss */
-/* line 757, assets/stylesheets/style.css */
+/* line 730, assets/stylesheets/style.scss */
+/* line 761, assets/stylesheets/style.css */
 #tab-navigation .nav-link.active {
   color: #495957; }
 
-/* line 731, assets/stylesheets/style.scss */
-/* line 761, assets/stylesheets/style.css */
+/* line 736, assets/stylesheets/style.scss */
+/* line 765, assets/stylesheets/style.css */
 section.assessment-results {
   padding-top: 20px;
   padding-bottom: 0px; }
 
-/* line 735, assets/stylesheets/style.scss */
-/* line 765, assets/stylesheets/style.css */
+/* line 740, assets/stylesheets/style.scss */
+/* line 769, assets/stylesheets/style.css */
 section.assessment-results h2 {
   margin-bottom: 25px; }
 
-/* line 739, assets/stylesheets/style.scss */
-/* line 768, assets/stylesheets/style.css */
+/* line 744, assets/stylesheets/style.scss */
+/* line 772, assets/stylesheets/style.css */
 section.assessment-results select {
   width: 100%; }
 
-/* line 743, assets/stylesheets/style.scss */
-/* line 771, assets/stylesheets/style.css */
+/* line 748, assets/stylesheets/style.scss */
+/* line 775, assets/stylesheets/style.css */
 section.assessment-results .questions {
   padding-top: 20px; }
 
-/* line 748, assets/stylesheets/style.scss */
-/* line 775, assets/stylesheets/style.css */
+/* line 753, assets/stylesheets/style.scss */
+/* line 779, assets/stylesheets/style.css */
 #assessment-nav-bar {
   margin-bottom: 20px; }
 
-/* line 751, assets/stylesheets/style.scss */
-/* line 778, assets/stylesheets/style.css */
+/* line 756, assets/stylesheets/style.scss */
+/* line 782, assets/stylesheets/style.css */
 #assessment-nav-bar .return-home-link {
   color: #fff;
   text-align: center;
   font-size: 16px; }
 
-/* line 755, assets/stylesheets/style.scss */
-/* line 783, assets/stylesheets/style.css */
+/* line 760, assets/stylesheets/style.scss */
+/* line 787, assets/stylesheets/style.css */
 #assessment-nav-bar .return-home-link:hover, #assessment-nav-bar .return-home-link:active, #assessment-nav-bar .return-home-link:focus {
   color: #fff !important;
   opacity: .75; }
 
-/* line 761, assets/stylesheets/style.scss */
-/* line 787, assets/stylesheets/style.css */
+/* line 766, assets/stylesheets/style.scss */
+/* line 791, assets/stylesheets/style.css */
 #assessment-nav-bar .return-home-icon {
   width: 24px;
   height: 24px;
   background: #5cb85c;
   padding: 4px 0; }
 
-/* line 768, assets/stylesheets/style.scss */
-/* line 793, assets/stylesheets/style.css */
+/* line 773, assets/stylesheets/style.scss */
+/* line 797, assets/stylesheets/style.css */
 #assessment-nav-bar .return-home-text {
   color: #5cb85c;
   margin-right: 5px;
@@ -1006,20 +1011,20 @@ section.assessment-results .questions {
 /* ==================================================
 Share Assessment Footer
 ================================================== */
-/* line 779, assets/stylesheets/style.scss */
-/* line 802, assets/stylesheets/style.css */
+/* line 784, assets/stylesheets/style.scss */
+/* line 806, assets/stylesheets/style.css */
 .html-always-bottom-footer {
   height: 100%; }
 
-/* line 783, assets/stylesheets/style.scss */
-/* line 806, assets/stylesheets/style.css */
+/* line 788, assets/stylesheets/style.scss */
+/* line 810, assets/stylesheets/style.css */
 .body-always-bottom-footer {
   position: relative;
   padding-bottom: 6rem;
   min-height: 100%; }
 
-/* line 789, assets/stylesheets/style.scss */
-/* line 812, assets/stylesheets/style.css */
+/* line 794, assets/stylesheets/style.scss */
+/* line 816, assets/stylesheets/style.css */
 #share-footer {
   background-color: #f7f7f7;
   padding: 0;
@@ -1027,13 +1032,13 @@ Share Assessment Footer
   bottom: 0;
   width: 100%; }
 
-/* line 800, assets/stylesheets/style.scss */
-/* line 819, assets/stylesheets/style.css */
+/* line 805, assets/stylesheets/style.scss */
+/* line 823, assets/stylesheets/style.css */
 #share-footer .social {
   display: flex; }
 
-/* line 803, assets/stylesheets/style.scss */
-/* line 822, assets/stylesheets/style.css */
+/* line 808, assets/stylesheets/style.scss */
+/* line 826, assets/stylesheets/style.css */
 #share-footer .social .share-text {
   font-size: 26px;
   padding: 15px 0;
@@ -1042,20 +1047,20 @@ Share Assessment Footer
   float: right; }
 
 @media (max-width: 768px) {
-  /* line 812, assets/stylesheets/style.scss */
-  /* line 830, assets/stylesheets/style.css */
+  /* line 817, assets/stylesheets/style.scss */
+  /* line 834, assets/stylesheets/style.css */
   #share-footer .social .share-text {
     float: none;
     padding: 10px 0; } }
 
 @media (max-width: 576px) {
-  /* line 819, assets/stylesheets/style.scss */
-  /* line 835, assets/stylesheets/style.css */
+  /* line 824, assets/stylesheets/style.scss */
+  /* line 839, assets/stylesheets/style.css */
   #share-footer .social .share-text {
     font-size: 16px; } }
 
-/* line 824, assets/stylesheets/style.scss */
-/* line 838, assets/stylesheets/style.css */
+/* line 829, assets/stylesheets/style.scss */
+/* line 842, assets/stylesheets/style.css */
 #share-footer .social #share-links {
   display: flex;
   padding-top: 15px;
@@ -1064,22 +1069,22 @@ Share Assessment Footer
   float: left; }
 
 @media (max-width: 768px) {
-  /* line 824, assets/stylesheets/style.scss */
-  /* line 846, assets/stylesheets/style.css */
+  /* line 829, assets/stylesheets/style.scss */
+  /* line 850, assets/stylesheets/style.css */
   #share-footer .social #share-links {
     padding-top: 0px;
     padding-bottom: 10px;
     float: none; } }
 
-/* line 837, assets/stylesheets/style.scss */
-/* line 851, assets/stylesheets/style.css */
+/* line 842, assets/stylesheets/style.scss */
+/* line 855, assets/stylesheets/style.css */
 #share-footer .social #share-links .jssocials-share {
   float: left;
   padding: 0px 10px;
   margin-bottom: 0; }
 
-/* line 842, assets/stylesheets/style.scss */
-/* line 856, assets/stylesheets/style.css */
+/* line 847, assets/stylesheets/style.scss */
+/* line 860, assets/stylesheets/style.css */
 #share-footer .social #share-links .jssocials-share .jssocials-share-link {
   font-size: 18px;
   display: inline-block;
@@ -1093,15 +1098,15 @@ Share Assessment Footer
   height: 36px;
   transition: 0.3s; }
 
-/* line 856, assets/stylesheets/style.scss */
-/* line 869, assets/stylesheets/style.css */
+/* line 861, assets/stylesheets/style.scss */
+/* line 873, assets/stylesheets/style.css */
 #share-footer .social #share-links .jssocials-share .jssocials-share-link:hover {
   background: #5cb85c;
   color: #fff; }
 
 @media (max-width: 576px) {
-  /* line 862, assets/stylesheets/style.scss */
-  /* line 874, assets/stylesheets/style.css */
+  /* line 867, assets/stylesheets/style.scss */
+  /* line 878, assets/stylesheets/style.css */
   #share-footer .social #share-links .jssocials-share .jssocials-share-link {
     font-size: 15px;
     width: 30px;
