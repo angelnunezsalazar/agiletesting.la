@@ -122,7 +122,11 @@
                 <div class="form">
                     <% @questions_testing.each do |question| %>
                     <div class="form-group">
+                      <% if question.name.eql? 'ExploratoryTesting' %>
+                      <p>Sesiones de <a href="http://https://es.slideshare.net/snahider/exploratory-testing-91052179">Exploratory Testing</a> son parte regular del trabajo durante el sprint. Se promueve este trabajo en parejas y se realizan discusiones grupales sobre los resultados encontrados.</p>
+                      <% else %>
                       <p><%= question.description %></p>
+                      <% end %>
                       <div id="<%= question.id %>" class="answer-slide"></div>
                       
                       <input type="hidden" name="answers[<%= question.id %>][question]" value="<%= question.name %>">
